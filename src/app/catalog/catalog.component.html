@@ -1,1 +1,9 @@
-<p>catalog works!</p>
+<h2>Catalogue des produits</h2>
+<div class="product-grid">
+  <div class="product-card" *ngFor="let product of products">
+    <h3>{{ product.productTitle }}</h3>
+    <p><strong>Prix:</strong> {{ product.productPrice }}</p>
+    <p><strong>Quantité:</strong> {{ product.productQuantity }}</p>
+    <button (click)="viewDetails(product.id)">Voir détails</button>
+  </div>
+</div>
