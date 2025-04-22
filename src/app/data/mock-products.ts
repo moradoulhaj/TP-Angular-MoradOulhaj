@@ -8,7 +8,7 @@ const appleProductsData = [
       productID: 'APL-001',
       title: 'iPhone 15 Pro Max',
       price: '1349.00 €',
-      quantity: 25,
+      quantity: 0,
       picture: 'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-15-pro-max-1.jpg',
     },
     {
@@ -16,7 +16,7 @@ const appleProductsData = [
       productID: 'APL-002',
       title: 'MacBook Air M2',
       price: '1249.00 €',
-      quantity: 18,
+      quantity: 9,
       picture: 'https://m.media-amazon.com/images/I/71f5Eu5lJSL._AC_SL1500_.jpg',
     },
     {

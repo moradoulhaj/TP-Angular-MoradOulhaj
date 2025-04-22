@@ -18,7 +18,11 @@
     height: 90px;
     object-fit: contain;
   }
-  
+  .product {
+    display: flex;
+    width: 100%;
+
+  }
   .product-info {
     flex: 1;
     padding: 0 20px;
@@ -57,5 +61,10 @@
   
   button:hover {
     background-color: #f0f0f0;
+  }
+  
+  .low-quantity {
+    background-color: #ffcccc; /* Light red color for low quantity */
+    border: 1px solid #ff0000; /* Red border */
   }
   

@@ -2,17 +2,21 @@
 
 <div class="catalog-list">
   <div class="product-row" *ngFor="let product of products">
-    <div class="product-image">
-      <img [src]="product.productPicture" [alt]="product.productTitle" />
-    </div>
-    <div class="product-info">
-      <h3>{{ product.productTitle }}</h3>
-      <p>{{ product.productTitle }}</p>
-      <p><strong>Part Type:</strong> {{ product.productTitle }}</p>
-    </div>
-    <div class="product-actions">
-      <p class="price">{{ product.productPrice }}</p>
-      <button (click)="viewDetails(product.id)" > Buy</button>
-    </div>
+    <ng-container *ngIf="product.productQuantity > 0">
+      <div class="product" [ngClass]="{'low-quantity': product.productQuantity < 10}">
+        <div class="product-image">
+          <img [src]="product.productPicture" [alt]="product.productTitle" />
+        </div>
+        <div class="product-info">
+          <h3>{{ product.productTitle }}</h3>
+          <p>{{ product.productTitle }}</p>
+          <p><strong>Part Type:</strong> {{ product.productTitle }}</p>
+        </div>
+        <div class="product-actions">
+          <p class="price">{{ product.productPrice }}</p>
+          <button (click)="viewDetails(product.id)">Buy</button>
+        </div>
+      </div>
+    </ng-container>
   </div>
 </div>
