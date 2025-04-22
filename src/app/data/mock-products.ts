@@ -8,7 +8,7 @@ const appleProductsData = [
       productID: 'APL-001',
       title: 'iPhone 15 Pro Max',
       price: '1349.00 €',
-      quantity: 25,
+      quantity: 0,
       picture: 'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-15-pro-max-1.jpg',
     },
     {
