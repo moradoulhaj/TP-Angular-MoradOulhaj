@@ -16,7 +16,7 @@ const appleProductsData = [
       productID: 'APL-002',
       title: 'MacBook Air M2',
       price: '1249.00 €',
-      quantity: 18,
+      quantity: 9,
       picture: 'https://m.media-amazon.com/images/I/71f5Eu5lJSL._AC_SL1500_.jpg',
     },
     {
