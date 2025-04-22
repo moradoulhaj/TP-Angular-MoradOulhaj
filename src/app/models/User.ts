@@ -51,9 +51,5 @@ enum userType {
     Guest = "Guest"
   }
 
-  let user: User = new User("APLLLK");
-  user.lastName = "Chaimae"
-  user.firstName = "Angular"
-  
-  console.log(user.greetUser())
+
 
