@@ -1,6 +1,11 @@
-<div class="details-container" *ngIf="product">
-  <h2>{{ product.productTitle }}</h2>
-  <p><strong>ID:</strong> {{ product.productID }}</p>
-  <p><strong>Prix:</strong> {{ product.productPrice }}</p>
-  <p><strong>Quantité:</strong> {{ product.productQuantity }}</p>
-</div>
+<div class="details-container" *ngIf="product" style="display: flex; gap: 2rem; align-items: center; padding: 1rem; border: 1px solid #ccc; border-radius: 10px;">
+    <img [src]="product.productPicture" alt="{{ product.productTitle }}" style="width: 150px; height: auto; border-radius: 8px; object-fit: cover;" />
+    <div>
+      <h2 style="margin: 0 0 0.5rem 0;">{{ product.productTitle }}</h2>
+      <p><strong>ID:</strong> {{ product.productID }}</p>
+      <p><strong>Prix:</strong> {{ product.productPrice }}</p>
+      <p><strong>Quantité:</strong> {{ product.productQuantity }}</p>
+      <button style="margin-top: 1rem; padding: 0.5rem 1rem; border: none; background-color: #007bff; color: white; border-radius: 4px;">Acheter</button>
+    </div>
+  </div>
+  
