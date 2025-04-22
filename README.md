@@ -12,6 +12,13 @@ This is a simple product catalog application built using **Angular** for the fro
   - [4. Build the Application (Optional)](#4-build-the-application-optional)
 - [Screenshots](#screenshots)
 
+## Screenshots
+
+### Catalog View
+![Catalog Screenshot](./screenshots/image.png)
+
+### Product Details
+![Product Details Screenshot](./screenshots/image2.png)
 
 ## Dependencies
 
