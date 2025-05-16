@@ -1,7 +1,17 @@
 <h2>Catalogue des produits</h2>
 
+<!-- Barre de filtre -->
+<div class="filter-bar">
+  <label for="categoryFilter">Filtrer par catégorie:</label>
+  <select id="categoryFilter" [(ngModel)]="selectedCategory">
+    <option value="">Toutes les catégories</option>
+    <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+  </select>
+</div>
+
+<!-- Affichage des produits filtrés -->
 <div class="catalog-list">
-  <div class="product-row" *ngFor="let product of products">
+  <div class="product-row" *ngFor="let product of filteredProducts()">
     <ng-container *ngIf="product.productQuantity > 0">
       <div class="product" [ngClass]="{'low-quantity': product.productQuantity < 10}">
         <div class="product-image">
@@ -9,7 +19,7 @@
         </div>
         <div class="product-info">
           <h3>{{ product.productTitle }}</h3>
-          <p>{{ product.productTitle }}</p>
+          <p><strong>Catégorie:</strong> {{ product.productCategory }}</p>
           <p><strong>Part Type:</strong> {{ product.productTitle }}</p>
         </div>
         <div class="product-actions">
