@@ -19,6 +19,13 @@ This is a simple product catalog application built using **Angular** for the fro
 
 ### Product Details
 ![Product Details Screenshot](./screenshots/image2.png)
+### Catalog View v2
+![Catalog Screenshot](./screenshots/image3.png)
+
+### Filter based on products category
+![Catalog Screenshot](./screenshots/image4.png)
+
+
 
 ## Dependencies
 
