@@ -4,6 +4,8 @@ export class Product {
     private _productPrice!: string;
     private _productQuantity!: number;
     private _productPicture!: string;
+    private _productCategory!: string;
+
   
     constructor(readonly productID: string) {}
   
@@ -46,7 +48,13 @@ export class Product {
     public set productPicture(value: string) {
       this._productPicture = value;
     }
-  
+    // Category
+    public get productCategory(): string {
+      return this._productCategory;
+    }
+    public set productCategory(value: string) {
+      this._productCategory = value;
+    }
     public printProduct(): string {
       return `id: ${this.id}, productID: ${this.productID}, productTitle: ${this.productTitle}, productPrice: ${this.productPrice}, productQuantity: ${this.productQuantity}, productPicture: ${this.productPicture}`;
     }

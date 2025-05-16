@@ -21,6 +21,8 @@ export class ProductService {
           product.productPrice = item.price;
           product.productQuantity = item.quantity;
           product.productPicture = item.picture;
+          product.productCategory = item.category;
+
           return product;
         })
       )
