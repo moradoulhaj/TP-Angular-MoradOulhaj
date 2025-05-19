@@ -2,9 +2,9 @@
 
 <!-- Barre de filtre -->
 <div class="filter-bar">
-  <label for="categoryFilter">Filtrer par catégorie:</label>
+  <label for="categoryFilter" i18n>Filtrer par catégorie:</label>
   <select id="categoryFilter" [(ngModel)]="selectedCategory">
-    <option value="">Toutes les catégories</option>
+    <option value="" i18n>Toutes les catégories</option>
     <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
   </select>
 </div>
@@ -19,8 +19,8 @@
         </div>
         <div class="product-info">
           <h3>{{ product.productTitle }}</h3>
-          <p><strong>Catégorie:</strong> {{ product.productCategory }}</p>
-          <p><strong>Part Type:</strong> {{ product.productTitle }}</p>
+          <p i18n> <strong>Catégorie:</strong> {{ product.productCategory }}</p>
+          <p i18n><strong>Part Type:</strong> {{ product.productTitle }}</p>
         </div>
         <div class="product-actions">
           <p class="price">{{ product.productPrice }}</p>

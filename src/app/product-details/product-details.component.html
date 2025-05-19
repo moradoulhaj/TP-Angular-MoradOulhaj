@@ -2,10 +2,10 @@
     <img [src]="product.productPicture" alt="{{ product.productTitle }}" style="width: 150px; height: auto; border-radius: 8px; object-fit: cover;" />
     <div>
       <h2 style="margin: 0 0 0.5rem 0;">{{ product.productTitle }}</h2>
-      <p><strong>ID:</strong> {{ product.productID }}</p>
-      <p><strong>Prix:</strong> {{ product.productPrice }}</p>
-      <p><strong>Quantité:</strong> {{ product.productQuantity }}</p>
-      <button style="margin-top: 1rem; padding: 0.5rem 1rem; border: none; background-color: #007bff; color: white; border-radius: 4px;">Acheter</button>
+      <p i18n><strong>ID:</strong> {{ product.productID }}</p>
+      <p i18n><strong >Prix:</strong> {{ product.productPrice }}</p>
+      <p i18n><strong>Quantité:</strong> {{ product.productQuantity }}</p>
+      <button style="margin-top: 1rem; padding: 0.5rem 1rem; border: none; background-color: #007bff; color: white; border-radius: 4px;" i18n>Acheter</button>
     </div>
   </div>
   
