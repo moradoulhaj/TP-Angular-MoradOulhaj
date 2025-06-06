@@ -3,7 +3,7 @@ import { AuthComponent } from './auth/auth.component';
 
 
 export const routes: Routes = [
-  {path:'authentification', component:AuthComponent},
+  {path:'authenticate', component:AuthComponent},
 
 
 ];
