@@ -1,8 +1,9 @@
 import { Routes } from '@angular/router';
-import { SigninComponent } from './auth/signin/signin.component';
+import { AuthComponent } from './auth/auth.component';
 
 
 export const routes: Routes = [
-  {path:'signin', component:SigninComponent}
+  {path:'authentification', component:AuthComponent},
+
 
 ];
