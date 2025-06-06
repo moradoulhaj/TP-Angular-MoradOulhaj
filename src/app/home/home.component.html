@@ -1,4 +1,3 @@
-<!-- Main Home Content -->
 <main class="bg-base-100 text-base-content">
 
     <!-- Hero Banner Section -->
@@ -9,15 +8,18 @@
     <!-- Categories Navigation -->
     <section class="max-w-7xl mx-auto px-4 mb-12">
       <h2 class="text-2xl font-bold mb-4">Categories</h2>
-      <!-- Pass categories array to CategoriesNavComponent -->
-      <app-categories-nav [categories]="getCategories()"></app-categories-nav>
+      <!-- Pass categories array and listen to category change event -->
+      <app-categories-nav
+        [categories]="categories"
+        (categoryChange)="onCategoryChange($event)">
+      </app-categories-nav>
     </section>
   
     <!-- Featured Carousel -->
     <section class="max-w-7xl mx-auto px-4 mb-12">
       <h2 class="text-2xl font-bold mb-4">Featured Books</h2>
-      <!-- Pass featured products to FeaturedCarouselComponent -->
-      <app-featured-carousel [featuredProducts]="getFeaturedProducts()"></app-featured-carousel>
+      <!-- Pass featured products -->
+      <app-featured-carousel [featuredProducts]="featuredProducts"></app-featured-carousel>
     </section>
   
     <!-- Best Deals -->
@@ -32,4 +34,5 @@
       <app-new-arrivals></app-new-arrivals>
     </section>
   
-</main>
+  </main>
+  

@@ -1,40 +1,16 @@
 <section class="p-6">
-    <h2 class="text-2xl font-bold mb-4">Featured Books</h2>
     <div class="carousel rounded-box space-x-4">
-      <div class="carousel-item">
+      <div *ngFor="let product of featuredProducts" class="carousel-item">
         <div class="card w-48 bg-base-100 shadow-xl">
-          <figure><img src="https://m.media-amazon.com/images/I/71aFt4+OTOL.jpg" alt="Book" /></figure>
+          <figure>
+            <img [src]="product.img1" [alt]="product.name" />
+          </figure>
           <div class="card-body p-4">
-            <h3 class="card-title text-sm">The Alchemist</h3>
-            <p class="text-xs text-gray-500">Paulo Coelho</p>
+            <h3 class="card-title text-sm">{{ product.name }}</h3>
+            <p class="text-xs text-gray-500">{{ product.description }}</p>
           </div>
         </div>
       </div>
-      <!-- Repeat .carousel-item as needed -->
     </div>
-    <div class="carousel rounded-box space-x-4">
-        <div class="carousel-item">
-          <div class="card w-48 bg-base-100 shadow-xl">
-            <figure><img src="https://m.media-amazon.com/images/I/71aFt4+OTOL.jpg" alt="Book" /></figure>
-            <div class="card-body p-4">
-              <h3 class="card-title text-sm">The Alchemist</h3>
-              <p class="text-xs text-gray-500">Paulo Coelho</p>
-            </div>
-          </div>
-        </div>
-        <!-- Repeat .carousel-item as needed -->
-      </div>
-      <div class="carousel rounded-box space-x-4">
-        <div class="carousel-item">
-          <div class="card w-48 bg-base-100 shadow-xl">
-            <figure><img src="https://m.media-amazon.com/images/I/71aFt4+OTOL.jpg" alt="Book" /></figure>
-            <div class="card-body p-4">
-              <h3 class="card-title text-sm">The Alchemist</h3>
-              <p class="text-xs text-gray-500">Paulo Coelho</p>
-            </div>
-          </div>
-        </div>
-        <!-- Repeat .carousel-item as needed -->
-      </div>
   </section>
   

@@ -1,11 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Product } from '../../models/product';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-featured-carousel',
-  imports: [],
   templateUrl: './featured-carousel.component.html',
-  styleUrl: './featured-carousel.component.css'
+  styleUrls: ['./featured-carousel.component.css'],
+  imports:[CommonModule]
 })
 export class FeaturedCarouselComponent {
-
+  @Input() featuredProducts: Product[] = [];
+  
 }
