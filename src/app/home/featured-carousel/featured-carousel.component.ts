@@ -23,9 +23,7 @@ export class FeaturedCarouselComponent {
   }
   
 
-closeDetails() {
-  this.selectedProduct = undefined;
-}
+
 
   
 }

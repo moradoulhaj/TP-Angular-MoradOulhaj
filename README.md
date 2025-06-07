@@ -25,6 +25,13 @@ This is a simple product catalog application built using **Angular** for the fro
 ### Filter based on products category
 ![Catalog Screenshot](./screenshots/image4.png)
 
+### Login Page (French version - fr-CA)
+![Login Page French](./screenshots/image5.png)
+
+### Login Page (English version - en-US)
+![Login Page English](./screenshots/image6.png)
+
+
 
 
 ## Dependencies
