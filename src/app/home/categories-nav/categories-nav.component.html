@@ -1,0 +1,13 @@
+<section class="p-6">
+    <div class="flex flex-wrap gap-3">
+      <div 
+        *ngFor="let category of categories" 
+        class="badge badge-outline badge-lg cursor-pointer"
+        [class.badge-primary]="category === selectedCategory"
+        (click)="selectCategory(category)"
+      >
+        {{ category }}
+      </div>
+    </div>
+  </section>
+  

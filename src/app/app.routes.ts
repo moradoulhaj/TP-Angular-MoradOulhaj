@@ -1,11 +1,12 @@
 import { Routes } from '@angular/router';
-import { CatalogComponent } from './catalog/catalog.component';
-import { ProductDetailsComponent } from './product-details/product-details.component';
-import {  SigninComponent } from './signin/signin.component';
+import { AuthComponent } from './auth/auth.component';
+import { HomeComponent } from './home/home.component';
+import { ProductDetailsComponent } from './components/common/product-details-modal/product-details-modal.component';
 
 export const routes: Routes = [
-  { path: 'catalogue', component: CatalogComponent },
+  { path: 'authenticate', component: AuthComponent },
+  { path: '', component: HomeComponent },
+
   { path: 'product/:id', component: ProductDetailsComponent },
-  { path: '', component: SigninComponent },
 
 ];

@@ -1,0 +1,22 @@
+<section class="p-6">
+    <div class="carousel-wrapper">
+      <div class="carousel rounded-box space-x-4">
+        <div *ngFor="let product of featuredProducts" class="carousel-item">
+          <div class="card bg-base-100 shadow-xl">
+            <figure class="image-wrapper">
+              <img [src]="product.img1" [alt]="product.name" class="product-image" />
+            </figure>
+            <div class="card-body p-4">
+              <h3 class="card-title text-sm">{{ product.name }}</h3>
+              <p class="text-xs text-gray-500">{{ product.description }}</p>
+              <button class="btn btn-wide" (click)="openDetails(product)">See Details</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Gradient fade on right -->
+      <div class="fade-indicator"></div>
+    </div>
+
+  </section>
+  

@@ -1,0 +1,76 @@
+<section class="max-w-4xl mx-auto p-8 bg-base-100 rounded-lg min-h-screen flex flex-col relative">
+    <!-- Close button -->
+    <button
+      class="btn btn-circle btn-sm btn-ghost absolute top-6 right-6"
+      (click)="close()"
+      aria-label="Close"
+    >
+      Retour
+    </button>
+  
+    <h2 class="text-3xl font-bold mb-6 text-center md:text-left">{{ product?.name }}</h2>
+  
+    <div class="flex flex-col md:flex-row gap-8 flex-grow">
+      <!-- Images gallery -->
+      <div class="flex-1">
+        <img
+          [src]="product?.img1"
+          [alt]="product?.name"
+          class="w-full rounded-lg mb-4 object-cover max-h-[400px]"
+        />
+        <div class="grid grid-cols-3 gap-3">
+          <img
+            *ngIf="product?.img2"
+            [src]="product?.img2"
+            [alt]="product?.name + ' image 2'"
+            class="rounded cursor-pointer hover:opacity-80 transition duration-300"
+          />
+          <img
+            *ngIf="product?.img3"
+            [src]="product?.img3"
+            [alt]="product?.name + ' image 3'"
+            class="rounded cursor-pointer hover:opacity-80 transition duration-300"
+          />
+          <img
+            *ngIf="product?.img4"
+            [src]="product?.img4"
+            [alt]="product?.name + ' image 4'"
+            class="rounded cursor-pointer hover:opacity-80 transition duration-300"
+          />
+        </div>
+      </div>
+      <div class="divider lg:divider-horizontal "></div>
+
+      <!-- Product details -->
+      <div class="flex-1 flex flex-col gap-[230px]">
+        <p class="mb-6 text-gray-700">{{ product?.description || 'No description available.' }}</p>
+  
+        <div>
+          <p class="text-xl font-semibold mb-3">
+            Price:
+            <span class="line-through text-gray-400 mr-2">${{ product?.originalPrice?.toFixed(2) }}</span>
+            <span class="text-primary">${{ product?.price?.toFixed(2) }}</span>
+            <span class="text-success ml-2 font-medium">({{ product?.discountPercentage }}% OFF)</span>
+          </p>
+  
+          <p class="mb-6"><strong>Category:</strong> {{ product?.category }}</p>
+  
+          <div class="mb-6 flex items-center gap-5">
+            <label for="quantity" class="font-medium">Quantity:</label>
+            <input
+              id="quantity"
+              type="number"
+              min="1"
+              max="1"
+              [value]="1"
+              disabled
+              class="input input-bordered w-20 text-center"
+            />
+          </div>
+  
+          <button class="btn btn-primary btn-wide">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  
