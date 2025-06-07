@@ -10,5 +10,7 @@ export interface Product {
     category: string;
     originalPrice: number;
     discountPercentage: number;
+    createdAt: Date;
+    updatedAt: Date;
   }
   

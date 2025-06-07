@@ -17,19 +17,23 @@ export class HomeComponent implements OnInit {
   categories: string[] = [];
   selectedCategory: string = '';
   featuredProducts: Product[] = [];
+  bestDealsProducts: Product[] = [];
+  newArrivalProducts: Product[] = [];
 
   constructor(private productService: ProductService) {}
 
   ngOnInit(): void {
-    // 1. Fetch all products to get categories
     this.productService.fetchAllProducts().subscribe({
       next: products => {
         this.categories = this.getUniqueCategories(products);
-        // Pick first category or "All"
         this.selectedCategory = this.categories.length > 0 ? this.categories[0] : '';
+
         if (this.selectedCategory) {
           this.loadFeaturedProducts(this.selectedCategory);
         }
+
+        this.loadBestDeals(products);
+        this.loadNewArrivals(products);
       },
       error: err => {
         console.error('Failed to fetch products', err);
@@ -43,12 +47,9 @@ export class HomeComponent implements OnInit {
   }
 
   loadFeaturedProducts(category: string): void {
-    // You can set page and size as needed
     this.productService.fetchProductsByCategory(category, 1, 10).subscribe({
       next: products => {
         this.featuredProducts = products;
-        console.log(this.featuredProducts);
-        
       },
       error: err => {
         console.error(`Failed to fetch products for category ${category}`, err);
@@ -56,9 +57,25 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  // This will be called when category changes from CategoriesNavComponent (you'll bind it)
+  loadBestDeals(products: Product[]): void {
+    // Sort products by discountPercentage and take top 10
+    this.bestDealsProducts = products
+      .filter(p => p.discountPercentage != null)
+      .sort((a, b) => b.discountPercentage! - a.discountPercentage!)
+      .slice(0, 10);
+  }
+
+  loadNewArrivals(products: Product[]): void {
+    this.newArrivalProducts = products
+      .filter(p => p.createdAt) // ensure createdAt exists
+      .sort((a, b) => new Date(b.createdAt!).getTime() - new Date(a.createdAt!).getTime())
+      .slice(0, 3); // latest 3 products
+  }
+  
+
   onCategoryChange(category: string): void {
     this.selectedCategory = category;
     this.loadFeaturedProducts(category);
   }
 }
+

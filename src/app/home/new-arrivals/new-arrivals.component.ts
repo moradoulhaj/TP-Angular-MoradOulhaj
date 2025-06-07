@@ -1,11 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Product } from '../../models/product';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-new-arrivals',
-  imports: [],
   templateUrl: './new-arrivals.component.html',
-  styleUrl: './new-arrivals.component.css'
+  styleUrl: './new-arrivals.component.css',
+  imports :[CommonModule]
 })
 export class NewArrivalsComponent {
+  @Input() products: Product[] = [];
 
 }
