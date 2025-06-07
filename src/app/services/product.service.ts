@@ -45,6 +45,12 @@ export class ProductService {
     return Array.from(new Set(categories));
   }
 
+  getProductById(id: string | number): Observable<Product> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.get<Product>(url);
+  }
+  
+
   // getFeaturedProducts(): Product[] {
   //   const products = this.products$.value;
   //   return products.filter(p => p.isFeatured);

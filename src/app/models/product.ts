@@ -4,9 +4,9 @@ export interface Product {
     description: string;
     price: number;
     img1: string;
-    image2: string;
-    image3: string;
-    image4: string;
+    img2: string;
+    img3: string;
+    img4: string;
     category: string;
     originalPrice: number;
     discountPercentage: number;

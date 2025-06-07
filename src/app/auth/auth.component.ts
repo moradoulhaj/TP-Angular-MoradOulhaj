@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.component.html',
-  imports: [CommonModule , FormsModule]
+  imports: [CommonModule, FormsModule],
 })
 export class AuthComponent {
   isSignUp = false;
@@ -21,20 +21,24 @@ export class AuthComponent {
   }
 
   signIn() {
-    this.auth.login(this.signInData.email, this.signInData.password).subscribe(user => {
-      console.log('Signed in', user);
-    });
+    this.auth
+      .login(this.signInData.email, this.signInData.password)
+      .subscribe((user) => {
+        console.log('Signed in', user);
+      });
   }
 
   signUp() {
-    this.auth.register(
-      this.signUpData.fullname,
-      this.signUpData.email,
-      this.signUpData.password,
-      this.signUpData.phone
-    ).subscribe(user => {
-      console.log('Signed up', user);
-      this.toggleMode(); // optional: switch to sign in after registration
-    });
+    this.auth
+      .register(
+        this.signUpData.fullname,
+        this.signUpData.email,
+        this.signUpData.password,
+        this.signUpData.phone
+      )
+      .subscribe((user) => {
+        console.log('Signed up', user);
+        this.toggleMode(); 
+      });
   }
 }

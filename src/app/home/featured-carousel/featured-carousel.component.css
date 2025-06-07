@@ -1,0 +1,59 @@
+/* Limit max width for the card, but allow it to shrink/grow */
+.card {
+    max-width: 14rem; /* about 224px */
+    width: 100%;
+  }
+  
+  /* Figure wrapper to control aspect ratio */
+  .image-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 133%; /* 4:3 aspect ratio (height / width * 100%) adjust as needed */
+    overflow: hidden;
+    border-radius: 0.5rem; /* optional rounded corners */
+  }
+  
+  /* Make image fill the container and crop if needed */
+  .product-image {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .carousel-wrapper {
+    position: relative;
+  }
+  
+  /* The carousel is scrollable */
+  .carousel {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+  }
+  
+  /* The fade on the right side to indicate more content */
+  .fade-indicator {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px; /* width of the gradient */
+    height: 100%;
+    pointer-events: none; /* so clicks go through */
+    background: linear-gradient(to left, rgba(255,255,255,1), rgba(255,255,255,0));
+    /* adjust colors depending on your background */
+  }
+  
+  /* Optional: scrollbar styling for desktop */
+  .carousel::-webkit-scrollbar {
+    height: 8px;
+  }
+  .carousel::-webkit-scrollbar-thumb {
+    background: #cbd5e1; /* light gray */
+    border-radius: 4px;
+  }
+  .carousel::-webkit-scrollbar-track {
+    background: #f1f5f9; /* lighter */
+  }
+  
