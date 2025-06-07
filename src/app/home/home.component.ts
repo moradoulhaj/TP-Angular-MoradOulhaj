@@ -60,16 +60,17 @@ export class HomeComponent implements OnInit {
   loadBestDeals(products: Product[]): void {
     // Sort products by discountPercentage and take top 10
     this.bestDealsProducts = products
-      .filter(p => p.discountPercentage != null)
-      .sort((a, b) => b.discountPercentage! - a.discountPercentage!)
-      .slice(0, 10);
+      .filter(p => p.promotionPercent != null)
+      .sort((a, b) => b.promotionPercent! - a.promotionPercent!)
+      .slice(0, 6);
+      console.log('dd',this.bestDealsProducts)
   }
 
   loadNewArrivals(products: Product[]): void {
     this.newArrivalProducts = products
       .filter(p => p.createdAt) // ensure createdAt exists
       .sort((a, b) => new Date(b.createdAt!).getTime() - new Date(a.createdAt!).getTime())
-      .slice(0, 3); // latest 3 products
+      .slice(0, 8); // latest 3 products
   }
   
 

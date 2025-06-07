@@ -1,6 +1,7 @@
 import { Component, Input, input } from '@angular/core';
 import { Product } from '../../models/product';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-best-deals',
@@ -10,5 +11,9 @@ import { CommonModule } from '@angular/common';
 })
 export class BestDealsComponent {
   @Input() products :Product[] = [];
+  constructor(private router: Router) {}
 
+  openDetails(product: Product) {
+    this.router.navigate(['/product', product.id]);
+  }
 }

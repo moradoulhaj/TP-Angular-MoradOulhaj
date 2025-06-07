@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Product } from '../../models/product';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-arrivals',
@@ -10,5 +11,10 @@ import { CommonModule } from '@angular/common';
 })
 export class NewArrivalsComponent {
   @Input() products: Product[] = [];
+  constructor(private router: Router) {}
+
+  openDetails(product: Product) {
+    this.router.navigate(['/product', product.id]);
+  }
 
 }
