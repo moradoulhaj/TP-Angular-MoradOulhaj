@@ -1,20 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.component.html',
   imports: [CommonModule, FormsModule],
 })
-export class AuthComponent {
+export class AuthComponent implements OnInit {
   isSignUp = false;
 
   signInData = { email: '', password: '' };
   signUpData = { fullname: '', email: '', password: '', phone: '' };
 
-  constructor(private auth: AuthService) {}
+  constructor(private auth: AuthService, private route: ActivatedRoute) {}
+
+  ngOnInit(): void {
+    this.route.queryParams.subscribe(params => {
+      this.isSignUp = params['mode'] === 'signup';
+    });
+  }
 
   toggleMode() {
     this.isSignUp = !this.isSignUp;
@@ -23,7 +30,7 @@ export class AuthComponent {
   signIn() {
     this.auth
       .login(this.signInData.email, this.signInData.password)
-      .subscribe((user) => {
+      .subscribe(user => {
         console.log('Signed in', user);
       });
   }
@@ -36,7 +43,7 @@ export class AuthComponent {
         this.signUpData.password,
         this.signUpData.phone
       )
-      .subscribe((user) => {
+      .subscribe(user => {
         console.log('Signed up', user);
         this.toggleMode(); 
       });

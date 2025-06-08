@@ -5,7 +5,7 @@ import { ProductDetailsComponent } from './components/common/product-details-mod
 import { LandingPageComponent } from './Pages/landing-page/landing-page.component';
 
 export const routes: Routes = [
-  { path: 'authenticate', component: AuthComponent },
+  { path: 'auth', component: AuthComponent },
   { path: '', component: LandingPageComponent },
   { path: 'home', component: HomeComponent },
 
