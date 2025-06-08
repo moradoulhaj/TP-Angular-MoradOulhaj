@@ -15,6 +15,10 @@ export class HeaderComponent {
 
   constructor(private router: Router , private http:HttpClient) {}
 
+
+  goToLandingPage(){
+    this.router.navigate(["/"]);
+  }
   ngOnInit() {
     const token = localStorage.getItem('token');
     this.isLoggedIn = !!token;
