@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -13,19 +14,19 @@ export class HeaderComponent {
   isLoggedIn = false;
   user: any = null;
 
-  constructor(private router: Router , private http:HttpClient) {}
+  constructor(private router: Router , private http:HttpClient ,private authService :AuthService) {}
 
 
   goToLandingPage(){
     this.router.navigate(["/"]);
   }
-  ngOnInit() {
-    const token = localStorage.getItem('token');
-    this.isLoggedIn = !!token;
-    if (this.isLoggedIn) {
-      this.user = JSON.parse(localStorage.getItem('user') || '{}');
-    }
-  }
+ // In your HeaderComponent or wherever needed
+ngOnInit() {
+  this.authService.isLoggedIn$.subscribe(isLoggedIn => {
+    this.isLoggedIn = isLoggedIn;
+    // update UI accordingly
+  });
+}
 
   logout() {
     const token = localStorage.getItem('token');
