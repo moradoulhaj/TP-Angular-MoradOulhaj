@@ -9,6 +9,8 @@ export interface Product {
     img4: string;
     category: string;
     originalPrice: number;
-    discountPercentage: number;
+    promotionPercent: number;
+    createdAt: Date;
+    updatedAt: Date;
   }
   
