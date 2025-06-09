@@ -27,14 +27,25 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.subscription?.unsubscribe();
   }
 
-  goToLandingPage() {
-    this.router.navigate(['/']);
+  goTo(destination: string): void {
+    switch (destination) {
+      case 'login':
+        this.router.navigate(['/auth'], { queryParams: { mode: 'signin' } });
+        break;
+      case 'signup':
+        this.router.navigate(['/auth'], { queryParams: { mode: 'signup' } });
+        break;
+      case 'landingpage':
+        this.router.navigate(['/']);
+        break;
+      default:
+        console.warn('Unknown destination:', destination);
+        break;
+    }
   }
 
   logout() {
     this.authService.logout();
-    this.router.navigate(['/auth']);  // navigate immediately
+    this.router.navigate(['/auth']); // navigate immediately
   }
-  
-  
 }

@@ -1,6 +1,6 @@
 <div class="navbar bg-base-100 shadow-sm">
     <div class="flex-1">
-      <a (click)="goToLandingPage()" class="btn btn-ghost text-xl">Book Haven</a>
+      <a (click)="goTo('landingPage')" class="btn btn-ghost text-xl">Book Haven</a>
     </div>
   
     <div class="flex-none" *ngIf="isLoggedIn">
@@ -62,8 +62,9 @@
     </div>
   
     <!-- If Not Logged In -->
-    <div class="flex-none" *ngIf="!isLoggedIn">
-      <a class="btn btn-outline btn-primary" routerLink="/auth">Sign In</a>
+    <div class="flex gap-3" *ngIf="!isLoggedIn">
+      <a class="btn btn-outline btn-primary" (click)="goTo('signup')" >Create Account</a>
+      <a class="btn btn-outline btn-primary" (click)="goTo('login')" >Sign In</a>
     </div>
   </div>
   
