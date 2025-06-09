@@ -17,24 +17,33 @@ export class AuthComponent {
   signInData = { email: '', password: '' };
   signUpData = { fullname: '', email: '', password: '', phone: '' };
 
-  constructor(private auth: AuthService, private router: Router,private route:ActivatedRoute) {}
+  constructor(private auth: AuthService, private router: Router, private route: ActivatedRoute) {}
 
-  toggleMode() {
-    this.isSignUp = !this.isSignUp;
-    this.errorMessage = ''; // clear error on toggle
-  }
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
       this.isSignUp = params['mode'] === 'signup';
     });
   }
+
+  toggleMode() {
+    this.isSignUp = !this.isSignUp;
+    this.errorMessage = ''; // clear errors
+
+    // Update the URL query parameter without reloading the page
+    this.router.navigate([], {
+      relativeTo: this.route,
+      queryParams: { mode: this.isSignUp ? 'signup' : 'signin' },
+      queryParamsHandling: 'merge', // preserve other params
+    });
+  }
+
   signIn() {
     this.errorMessage = '';
     this.auth.login(this.signInData.email, this.signInData.password).subscribe({
       next: (user) => {
         localStorage.setItem('token', user.token);
         localStorage.setItem('user', JSON.stringify(user));
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/']);
       },
       error: () => {
         this.errorMessage = 'Something went wrong during login.';
@@ -53,7 +62,7 @@ export class AuthComponent {
       )
       .subscribe({
         next: () => {
-          this.toggleMode(); // redirect to login view
+          this.toggleMode(); // after successful signup, switch to sign-in form & update URL param
         },
         error: () => {
           this.errorMessage = 'Something went wrong during registration.';
@@ -61,8 +70,3 @@ export class AuthComponent {
       });
   }
 }
-
-
-
-
-  
