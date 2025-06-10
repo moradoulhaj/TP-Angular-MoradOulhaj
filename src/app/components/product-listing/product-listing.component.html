@@ -9,25 +9,23 @@
     </app-categories-nav>
   </section>
 
-  <!-- Featured Carousel -->    
+  <!-- Featured Carousel -->
   <section class="w-full mx-auto px-4 mb-1">
     <app-featured-carousel
       [featuredProducts]="featuredProducts"
       [categories]="categories"
       (categoryChange)="onCategoryChange($event)"
-
     ></app-featured-carousel>
   </section>
-
 
   <!-- Best Deals -->
   <section class="w-full mx-auto px-4 mb-1">
     <app-best-deals [products]="bestDealsProducts"></app-best-deals>
   </section>
 
-
   <!-- New Arrivals -->
   <section class="w-full mx-auto px-4 mb-1">
     <app-new-arrivals [products]="newArrivalProducts"></app-new-arrivals>
   </section>
+  <app-product-details-modal />
 </main>

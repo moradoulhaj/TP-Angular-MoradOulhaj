@@ -1,12 +1,11 @@
-
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../../models/product';
 import { ProductService } from '../../services/product.service';
-import { CategoriesNavComponent } from "./categories-nav/categories-nav.component";
-import { FeaturedCarouselComponent } from "./featured-carousel/featured-carousel.component";
-import { BestDealsComponent } from "./best-deals/best-deals.component";
-import { NewArrivalsComponent } from "./new-arrivals/new-arrivals.component";
-
+import { CategoriesNavComponent } from './categories-nav/categories-nav.component';
+import { FeaturedCarouselComponent } from './featured-carousel/featured-carousel.component';
+import { BestDealsComponent } from './best-deals/best-deals.component';
+import { NewArrivalsComponent } from './new-arrivals/new-arrivals.component';
+import { ProductDetailsModalComponent } from "../common/product-details-modal/product-details-modal.component";
 
 @Component({
   selector: 'app-product-listing',
@@ -15,9 +14,10 @@ import { NewArrivalsComponent } from "./new-arrivals/new-arrivals.component";
     FeaturedCarouselComponent,
     BestDealsComponent,
     NewArrivalsComponent,
+    ProductDetailsModalComponent
 ],
   templateUrl: './product-listing.component.html',
-  styleUrl: './product-listing.component.css'
+  styleUrl: './product-listing.component.css',
 })
 export class ProductListingComponent implements OnInit {
   categories: string[] = [];
