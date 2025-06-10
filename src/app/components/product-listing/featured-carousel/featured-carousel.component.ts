@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Product } from '../../../models/product';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
@@ -10,13 +10,19 @@ import { Router } from '@angular/router';
   imports: [CommonModule],
 })
 export class FeaturedCarouselComponent {
-  constructor(private router: Router) {}
+  @Output() categoryChange = new EventEmitter<string>();
 
   @Input() featuredProducts: Product[] = [];
+  @Input() categories: string[] = [];
+  selectedCategory: string = '';
 
+  // // Call this when a category is clicked
+  selectCategory(category: string) {
+
+    this.selectedCategory = category;
+    this.categoryChange.emit(category);
+  }
   selectedProduct?: Product;
 
-  openDetails(product: Product) {
-    this.router.navigate(['/product', product.id]);
-  }
+
 }
