@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Product } from '../../models/product';
+import { Product } from '../../../models/product';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 
@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   selector: 'app-featured-carousel',
   templateUrl: './featured-carousel.component.html',
   styleUrls: ['./featured-carousel.component.css'],
-  imports: [CommonModule]
+  imports: [CommonModule],
 })
 export class FeaturedCarouselComponent {
   constructor(private router: Router) {}
@@ -16,14 +16,7 @@ export class FeaturedCarouselComponent {
 
   selectedProduct?: Product;
 
-
-  
   openDetails(product: Product) {
     this.router.navigate(['/product', product.id]);
   }
-  
-
-
-
-  
 }

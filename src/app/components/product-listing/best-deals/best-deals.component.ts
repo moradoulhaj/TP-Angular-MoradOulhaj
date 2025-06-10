@@ -1,5 +1,5 @@
 import { Component, Input, input } from '@angular/core';
-import { Product } from '../../models/product';
+import { Product } from '../../../models/product';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 
@@ -7,10 +7,10 @@ import { Router } from '@angular/router';
   selector: 'app-best-deals',
   imports: [CommonModule],
   templateUrl: './best-deals.component.html',
-  styleUrl: './best-deals.component.css'
+  styleUrl: './best-deals.component.css',
 })
 export class BestDealsComponent {
-  @Input() products :Product[] = [];
+  @Input() products: Product[] = [];
   constructor(private router: Router) {}
 
   openDetails(product: Product) {

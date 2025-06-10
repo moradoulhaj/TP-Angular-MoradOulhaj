@@ -1,25 +1,25 @@
+
 import { Component, OnInit } from '@angular/core';
-import { HeroBannerComponent } from '../components/product-listing/hero-banner/hero-banner.component';
-import { CategoriesNavComponent } from '../components/product-listing/categories-nav/categories-nav.component';
-import { FeaturedCarouselComponent } from '../components/product-listing/featured-carousel/featured-carousel.component';
-import { BestDealsComponent } from '../components/product-listing/best-deals/best-deals.component';
-import { NewArrivalsComponent } from '../components/product-listing/new-arrivals/new-arrivals.component';
-import { ProductService } from '../services/product.service';
-import { Product } from '../models/product';
+import { Product } from '../../models/product';
+import { ProductService } from '../../services/product.service';
+import { CategoriesNavComponent } from "./categories-nav/categories-nav.component";
+import { FeaturedCarouselComponent } from "./featured-carousel/featured-carousel.component";
+import { BestDealsComponent } from "./best-deals/best-deals.component";
+import { NewArrivalsComponent } from "./new-arrivals/new-arrivals.component";
+
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-product-listing',
   imports: [
-    HeroBannerComponent,
     CategoriesNavComponent,
     FeaturedCarouselComponent,
     BestDealsComponent,
     NewArrivalsComponent,
-  ],
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'],
+],
+  templateUrl: './product-listing.component.html',
+  styleUrl: './product-listing.component.css'
 })
-export class HomeComponent implements OnInit {
+export class ProductListingComponent implements OnInit {
   categories: string[] = [];
   selectedCategory: string = '';
   featuredProducts: Product[] = [];

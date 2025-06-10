@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Product } from '../../models/product';
+import { Product } from '../../../models/product';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 
@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   selector: 'app-new-arrivals',
   templateUrl: './new-arrivals.component.html',
   styleUrl: './new-arrivals.component.css',
-  imports :[CommonModule]
+  imports: [CommonModule],
 })
 export class NewArrivalsComponent {
   @Input() products: Product[] = [];
@@ -16,5 +16,4 @@ export class NewArrivalsComponent {
   openDetails(product: Product) {
     this.router.navigate(['/product', product.id]);
   }
-
 }
