@@ -1,0 +1,33 @@
+<main class="bg-base-100 text-base-content">
+  <!-- Categories Navigation -->
+  <section class="w-full mx-auto px-4 mb-1">
+    <!-- Pass categories array and listen to categoryChange event -->
+    <app-categories-nav
+      [categories]="categories"
+      (categoryChange)="onCategoryChange($event)"
+    >
+    </app-categories-nav>
+  </section>
+
+  <!-- Featured Carousel -->    
+  <section class="w-full mx-auto px-4 mb-1">
+    <app-featured-carousel
+      [featuredProducts]="featuredProducts"
+      [categories]="categories"
+      (categoryChange)="onCategoryChange($event)"
+
+    ></app-featured-carousel>
+  </section>
+
+
+  <!-- Best Deals -->
+  <section class="w-full mx-auto px-4 mb-1">
+    <app-best-deals [products]="bestDealsProducts"></app-best-deals>
+  </section>
+
+
+  <!-- New Arrivals -->
+  <section class="w-full mx-auto px-4 mb-1">
+    <app-new-arrivals [products]="newArrivalProducts"></app-new-arrivals>
+  </section>
+</main>
