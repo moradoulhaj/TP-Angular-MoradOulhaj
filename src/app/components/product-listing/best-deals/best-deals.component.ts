@@ -16,4 +16,7 @@ export class BestDealsComponent {
   openDetails(product: Product) {
     this.router.navigate(['/product', product.id]);
   }
+  goToProductDetails(id: Number) {
+    this.router.navigate(['/product-details', id]);
+  }
 }
