@@ -1,210 +1,368 @@
-<section class="w-full min-h-screen bg-gray-50/90 backdrop-blur-sm flex justify-center items-center p-4 md:p-8 fixed inset-0 z-50">
-    <div class="max-w-6xl w-full bg-white rounded-xl shadow-2xl overflow-hidden border border-gray-100 max-h-[90vh] overflow-y-auto">
-      <!-- Close Button -->
-      <div class="flex justify-end p-4 bg-gray-50 sticky top-0 z-10">
-        <button
-          class="text-gray-500 hover:text-gray-800 transition duration-300 bg-white rounded-full p-2 shadow-sm hover:shadow-md"
-          (click)="close()"
-          aria-label="Close"
+<section
+  class="w-full min-h-screen bg-gray-50/90 backdrop-blur-sm flex justify-center items-center p-4 md:p-8 fixed inset-0 z-50"
+>
+  <div
+    class="max-w-6xl w-full bg-white rounded-xl shadow-2xl overflow-hidden border border-gray-100 max-h-[90vh] overflow-y-auto"
+  >
+    <!-- Close Button -->
+    <div class="flex justify-end p-4 bg-gray-50 sticky top-0 z-10">
+      <button
+        class="text-gray-500 hover:text-gray-800 transition duration-300 bg-white rounded-full p-2 shadow-sm hover:shadow-md"
+        (click)="selectProduct(null)"
+        aria-label="Close"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M6 18L18 6M6 6l12 12"
-            />
-          </svg>
-        </button>
-      </div>
-    
-      <!-- Modal Content -->
-      <div class="flex flex-col lg:flex-row">
-        <!-- Product Images -->
-        <div class="flex-1 p-6 lg:border-r border-gray-200">
-          <div class="sticky top-6">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Modal Content -->
+    <div class="flex flex-col lg:flex-row">
+      <!-- Product Images -->
+      <div class="flex-1 p-6 lg:border-r border-gray-200">
+        <div class="sticky top-6">
+          <img
+            [src]="product.img1"
+            [alt]="product.name"
+            class="w-full h-80 md:h-96 object-contain rounded-lg shadow-sm mb-4 bg-gray-50 p-4"
+          />
+          <div class="grid grid-cols-3 gap-3">
             <img
-              [src]="product?.img1"
-              [alt]="product?.name"
-              class="w-full h-80 md:h-96 object-contain rounded-lg shadow-sm mb-4 bg-gray-50 p-4"
+              *ngIf="product.img2"
+              [src]="product.img2"
+              [alt]="product.name + ' image 2'"
+              class="h-24 w-full object-cover rounded-lg cursor-pointer hover:opacity-80 transition duration-300 border border-gray-200"
             />
-            <div class="grid grid-cols-3 gap-3">
-              <img
-                *ngIf="product?.img2"
-                [src]="product?.img2"
-                [alt]="product?.name + ' image 2'"
-                class="h-24 w-full object-cover rounded-lg cursor-pointer hover:opacity-80 transition duration-300 border border-gray-200"
-              />
-              <img
-                *ngIf="product?.img3"
-                [src]="product?.img3"
-                [alt]="product?.name + ' image 3'"
-                class="h-24 w-full object-cover rounded-lg cursor-pointer hover:opacity-80 transition duration-300 border border-gray-200"
-              />
-              <img
-                *ngIf="product?.img4"
-                [src]="product?.img4"
-                [alt]="product?.name + ' image 4'"
-                class="h-24 w-full object-cover rounded-lg cursor-pointer hover:opacity-80 transition duration-300 border border-gray-200"
-              />
-            </div>
-          </div>
-        </div>
-    
-        <!-- Product Details -->
-        <div class="flex-1 p-6 flex flex-col">
-          <div class="mb-6">
-            <span class="badge badge-accent mb-2">{{ product?.category }}</span>
-            <h2 class="text-3xl font-bold text-gray-800 mb-2">{{ product?.name }}</h2>
-            <div class="flex items-center mb-4">
-              <div class="rating rating-sm">
-                <input type="radio" name="rating-1" class="mask mask-star-2 bg-yellow-400" checked />
-                <input type="radio" name="rating-1" class="mask mask-star-2 bg-yellow-400" checked />
-                <input type="radio" name="rating-1" class="mask mask-star-2 bg-yellow-400" checked />
-                <input type="radio" name="rating-1" class="mask mask-star-2 bg-yellow-400" checked />
-                <input type="radio" name="rating-1" class="mask mask-star-2 bg-yellow-400" />
-              </div>
-              <span class="text-sm text-gray-500 ml-2">(24 reviews)</span>
-            </div>
-          </div>
-  
-          <div class="prose max-w-none text-gray-600 mb-6">
-            <p>{{ product?.description || 'No description available.' }}</p>
-          </div>
-    
-          <div class="mb-6 p-4 bg-gray-50 rounded-lg">
-            <div class="flex items-center gap-4">
-              <p class="text-3xl font-bold text-primary">${{ product?.price?.toFixed(2) }}</p>
-              <p *ngIf="product?.originalPrice" class="text-lg text-gray-400 line-through">${{ product?.originalPrice?.toFixed(2) }}</p>
-              <p *ngIf="product?.promotionPercent" class="badge badge-success">
-                Save {{ product?.promotionPercent }}%
-              </p>
-            </div>
-          </div>
-    
-          <div class="flex items-center gap-4 mb-6">
-            <label for="quantity" class="font-medium text-gray-700">Quantity:</label>
-            <div class="join">
-              <button class="btn btn-outline join-item">-</button>
-              <input
-                id="quantity"
-                type="number"
-                min="1"
-                max="10"
-                class="input input-bordered join-item text-center w-16"
-              />
-              <button class="btn btn-outline join-item" >+</button>
-            </div>
-          </div>
-    
-          <div class="flex flex-col sm:flex-row gap-3 mb-8">
-            <button class="btn btn-primary flex-1 gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-              </svg>
-              Add to Cart
-            </button>
-            <button class="btn btn-outline btn-secondary flex-1 gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-              </svg>
-              Wishlist
-            </button>
+            <img
+              *ngIf="product.img3"
+              [src]="product.img3"
+              [alt]="product.name + ' image 3'"
+              class="h-24 w-full object-cover rounded-lg cursor-pointer hover:opacity-80 transition duration-300 border border-gray-200"
+            />
+            <img
+              *ngIf="product.img4"
+              [src]="product.img4"
+              [alt]="product.name + ' image 4'"
+              class="h-24 w-full object-cover rounded-lg cursor-pointer hover:opacity-80 transition duration-300 border border-gray-200"
+            />
           </div>
         </div>
       </div>
-    
-      <!-- Static Reviews Section -->
-      <div class="border-t border-gray-200 p-6">
-        <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-2">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-          </svg>
-          Customer Reviews
-        </h3>
-        
-        <div class="space-y-6">
-          <!-- Review 1 -->
-          <div class="p-6 bg-gray-50 rounded-lg border border-gray-200">
-            <div class="flex items-center mb-4">
-              <div class="avatar placeholder">
-                <div class="bg-blue-500 text-white rounded-full w-10">
-                  <span>JD</span>
-                </div>
-              </div>
-              <div class="ml-4">
-                <p class="font-semibold">John Doe</p>
-                <div class="flex items-center mt-1">
-                  <div class="rating rating-xs">
-                    <input type="radio" name="rating-john" class="mask mask-star-2 bg-yellow-400" checked />
-                    <input type="radio" name="rating-john" class="mask mask-star-2 bg-yellow-400" checked />
-                    <input type="radio" name="rating-john" class="mask mask-star-2 bg-yellow-400" checked />
-                    <input type="radio" name="rating-john" class="mask mask-star-2 bg-yellow-400" checked />
-                    <input type="radio" name="rating-john" class="mask mask-star-2 bg-yellow-400" />
-                  </div>
-                  <span class="text-sm text-gray-500 ml-2">May 15, 2023</span>
-                </div>
-              </div>
+
+      <!-- Product Details -->
+      <div class="flex-1 p-6 flex flex-col">
+        <div class="mb-6">
+          <span class="badge badge-accent mb-2">{{ product.category }}</span>
+          <h2 class="text-3xl font-bold text-gray-800 mb-2">
+            {{ product.name }}
+          </h2>
+          <div class="flex items-center mb-4">
+            <div class="rating rating-sm">
+              <input
+                type="radio"
+                name="rating-1"
+                class="mask mask-star-2 bg-yellow-400"
+                checked
+              />
+              <input
+                type="radio"
+                name="rating-1"
+                class="mask mask-star-2 bg-yellow-400"
+                checked
+              />
+              <input
+                type="radio"
+                name="rating-1"
+                class="mask mask-star-2 bg-yellow-400"
+                checked
+              />
+              <input
+                type="radio"
+                name="rating-1"
+                class="mask mask-star-2 bg-yellow-400"
+                checked
+              />
+              <input
+                type="radio"
+                name="rating-1"
+                class="mask mask-star-2 bg-yellow-400"
+              />
             </div>
-            <p class="text-gray-700">"This book completely changed my perspective on modern literature. The author's insights are profound and the narrative style is captivating. Highly recommended for anyone interested in contemporary fiction."</p>
+            <span class="text-sm text-gray-500 ml-2">(24 reviews)</span>
           </div>
-  
-          <!-- Review 2 -->
-          <div class="p-6 bg-gray-50 rounded-lg border border-gray-200">
-            <div class="flex items-center mb-4">
-              <div class="avatar placeholder">
-                <div class="bg-purple-500 text-white rounded-full w-10">
-                  <span>AS</span>
-                </div>
-              </div>
-              <div class="ml-4">
-                <p class="font-semibold">Alice Smith</p>
-                <div class="flex items-center mt-1">
-                  <div class="rating rating-xs">
-                    <input type="radio" name="rating-alice" class="mask mask-star-2 bg-yellow-400" checked />
-                    <input type="radio" name="rating-alice" class="mask mask-star-2 bg-yellow-400" checked />
-                    <input type="radio" name="rating-alice" class="mask mask-star-2 bg-yellow-400" checked />
-                    <input type="radio" name="rating-alice" class="mask mask-star-2 bg-yellow-400" checked />
-                    <input type="radio" name="rating-alice" class="mask mask-star-2 bg-yellow-400" checked />
-                  </div>
-                  <span class="text-sm text-gray-500 ml-2">April 28, 2023</span>
-                </div>
-              </div>
-            </div>
-            <p class="text-gray-700">"Absolutely brilliant! I couldn't put it down once I started reading. The character development is exceptional and the plot twists kept me engaged throughout. Will definitely be reading more from this author."</p>
+        </div>
+
+        <div class="prose max-w-none text-gray-600 mb-6">
+          <p>{{ product.description || "No description available." }}</p>
+        </div>
+
+        <div class="mb-6 p-4 bg-gray-50 rounded-lg">
+          <div class="flex items-center gap-4">
+            <p class="text-3xl font-bold text-primary">
+              ${{ product.price.toFixed(2) }}
+            </p>
+            <p
+              *ngIf="product.originalPrice"
+              class="text-lg text-gray-400 line-through"
+            >
+              ${{ product.originalPrice.toFixed(2) }}
+            </p>
+            <p *ngIf="product.promotionPercent" class="badge badge-success">
+              Save {{ product.promotionPercent }}%
+            </p>
           </div>
-  
-          <!-- Review 3 -->
-          <div class="p-6 bg-gray-50 rounded-lg border border-gray-200">
-            <div class="flex items-center mb-4">
-              <div class="avatar placeholder">
-                <div class="bg-green-500 text-white rounded-full w-10">
-                  <span>MB</span>
-                </div>
-              </div>
-              <div class="ml-4">
-                <p class="font-semibold">Michael Brown</p>
-                <div class="flex items-center mt-1">
-                  <div class="rating rating-xs">
-                    <input type="radio" name="rating-michael" class="mask mask-star-2 bg-yellow-400" checked />
-                    <input type="radio" name="rating-michael" class="mask mask-star-2 bg-yellow-400" checked />
-                    <input type="radio" name="rating-michael" class="mask mask-star-2 bg-yellow-400" checked />
-                    <input type="radio" name="rating-michael" class="mask mask-star-2 bg-yellow-400" />
-                    <input type="radio" name="rating-michael" class="mask mask-star-2 bg-yellow-400" />
-                  </div>
-                  <span class="text-sm text-gray-500 ml-2">March 10, 2023</span>
-                </div>
-              </div>
-            </div>
-            <p class="text-gray-700">"A solid read with interesting concepts. While I enjoyed most of it, some sections felt a bit drawn out. Still, the overall message was powerful and thought-provoking."</p>
+        </div>
+
+        <div class="flex items-center gap-4 mb-6">
+          <label for="quantity" class="font-medium text-gray-700"
+            >Quantity:</label
+          >
+          <div class="join">
+            <button class="btn btn-outline join-item">-</button>
+            <input
+              id="quantity"
+              type="number"
+              min="1"
+              max="10"
+              class="input input-bordered join-item text-center w-16"
+            />
+            <button class="btn btn-outline join-item">+</button>
           </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-3 mb-8">
+          <button class="btn btn-primary flex-1 gap-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+              />
+            </svg>
+            Add to Cart
+          </button>
+          <button class="btn btn-outline btn-secondary flex-1 gap-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+              />
+            </svg>
+            Wishlist
+          </button>
         </div>
       </div>
     </div>
-  </section>
+
+    <!-- Static Reviews Section -->
+    <div class="border-t border-gray-200 p-6">
+      <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+          />
+        </svg>
+        Customer Reviews
+      </h3>
+
+      <div class="space-y-6">
+        <!-- Review 1 -->
+        <div class="p-6 bg-gray-50 rounded-lg border border-gray-200">
+          <div class="flex items-center mb-4">
+            <div class="avatar placeholder">
+              <div class="bg-blue-500 text-white rounded-full w-10">
+                <span>JD</span>
+              </div>
+            </div>
+            <div class="ml-4">
+              <p class="font-semibold">John Doe</p>
+              <div class="flex items-center mt-1">
+                <div class="rating rating-xs">
+                  <input
+                    type="radio"
+                    name="rating-john"
+                    class="mask mask-star-2 bg-yellow-400"
+                    checked
+                  />
+                  <input
+                    type="radio"
+                    name="rating-john"
+                    class="mask mask-star-2 bg-yellow-400"
+                    checked
+                  />
+                  <input
+                    type="radio"
+                    name="rating-john"
+                    class="mask mask-star-2 bg-yellow-400"
+                    checked
+                  />
+                  <input
+                    type="radio"
+                    name="rating-john"
+                    class="mask mask-star-2 bg-yellow-400"
+                    checked
+                  />
+                  <input
+                    type="radio"
+                    name="rating-john"
+                    class="mask mask-star-2 bg-yellow-400"
+                  />
+                </div>
+                <span class="text-sm text-gray-500 ml-2">May 15, 2023</span>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-700">
+            "This book completely changed my perspective on modern literature.
+            The author's insights are profound and the narrative style is
+            captivating. Highly recommended for anyone interested in
+            contemporary fiction."
+          </p>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="p-6 bg-gray-50 rounded-lg border border-gray-200">
+          <div class="flex items-center mb-4">
+            <div class="avatar placeholder">
+              <div class="bg-purple-500 text-white rounded-full w-10">
+                <span>AS</span>
+              </div>
+            </div>
+            <div class="ml-4">
+              <p class="font-semibold">Alice Smith</p>
+              <div class="flex items-center mt-1">
+                <div class="rating rating-xs">
+                  <input
+                    type="radio"
+                    name="rating-alice"
+                    class="mask mask-star-2 bg-yellow-400"
+                    checked
+                  />
+                  <input
+                    type="radio"
+                    name="rating-alice"
+                    class="mask mask-star-2 bg-yellow-400"
+                    checked
+                  />
+                  <input
+                    type="radio"
+                    name="rating-alice"
+                    class="mask mask-star-2 bg-yellow-400"
+                    checked
+                  />
+                  <input
+                    type="radio"
+                    name="rating-alice"
+                    class="mask mask-star-2 bg-yellow-400"
+                    checked
+                  />
+                  <input
+                    type="radio"
+                    name="rating-alice"
+                    class="mask mask-star-2 bg-yellow-400"
+                    checked
+                  />
+                </div>
+                <span class="text-sm text-gray-500 ml-2">April 28, 2023</span>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-700">
+            "Absolutely brilliant! I couldn't put it down once I started
+            reading. The character development is exceptional and the plot
+            twists kept me engaged throughout. Will definitely be reading more
+            from this author."
+          </p>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="p-6 bg-gray-50 rounded-lg border border-gray-200">
+          <div class="flex items-center mb-4">
+            <div class="avatar placeholder">
+              <div class="bg-green-500 text-white rounded-full w-10">
+                <span>MB</span>
+              </div>
+            </div>
+            <div class="ml-4">
+              <p class="font-semibold">Michael Brown</p>
+              <div class="flex items-center mt-1">
+                <div class="rating rating-xs">
+                  <input
+                    type="radio"
+                    name="rating-michael"
+                    class="mask mask-star-2 bg-yellow-400"
+                    checked
+                  />
+                  <input
+                    type="radio"
+                    name="rating-michael"
+                    class="mask mask-star-2 bg-yellow-400"
+                    checked
+                  />
+                  <input
+                    type="radio"
+                    name="rating-michael"
+                    class="mask mask-star-2 bg-yellow-400"
+                    checked
+                  />
+                  <input
+                    type="radio"
+                    name="rating-michael"
+                    class="mask mask-star-2 bg-yellow-400"
+                  />
+                  <input
+                    type="radio"
+                    name="rating-michael"
+                    class="mask mask-star-2 bg-yellow-400"
+                  />
+                </div>
+                <span class="text-sm text-gray-500 ml-2">March 10, 2023</span>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-700">
+            "A solid read with interesting concepts. While I enjoyed most of it,
+            some sections felt a bit drawn out. Still, the overall message was
+            powerful and thought-provoking."
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

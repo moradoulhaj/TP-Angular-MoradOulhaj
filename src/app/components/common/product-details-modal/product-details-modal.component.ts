@@ -13,9 +13,9 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule], // Import CommonModule for ngIf, ngFor, etc.
 })
 export class ProductDetailsModalComponent implements OnInit {
-  @Input() productId!: number; // Accept product ID as input
-  product?: Product; // Product details
+  @Input() product!: Product; // Accept product ID as input
   comments: Comment[] = []; // Comments for the product
+  @Input() selectProduct!: Function;
 
   constructor(
     private productService: ProductService,
@@ -24,35 +24,35 @@ export class ProductDetailsModalComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    if (this.productId) {
-      this.fetchProductDetails();
-      this.fetchComments();
-    }
+    // if (this.productId) {
+    //   this.fetchProductDetails();
+    //   this.fetchComments();
+    // }
   }
 
   // Fetch product details by ID
-  fetchProductDetails(): void {
-    this.productService.getProductById(this.productId).subscribe(
-      (product) => {
-        this.product = product;
-      },
-      (error) => {
-        console.error('Error fetching product details:', error);
-      }
-    );
-  }
+  // fetchProductDetails(): void {
+  //   this.productService.getProductById(this.productId).subscribe(
+  //     (product) => {
+  //       this.product = product;
+  //     },
+  //     (error) => {
+  //       console.error('Error fetching product details:', error);
+  //     }
+  //   );
+  // }
 
   // Fetch comments for the product
-  fetchComments(): void {
-    this.commentsService.getProductComments(this.productId).subscribe(
-      (comments) => {
-        this.comments = comments;
-      },
-      (error) => {
-        console.error('Error fetching comments:', error);
-      }
-    );
-  }
+  // fetchComments(): void {
+  //   this.commentsService.getProductComments(this.productId).subscribe(
+  //     (comments) => {
+  //       this.comments = comments;
+  //     },
+  //     (error) => {
+  //       console.error('Error fetching comments:', error);
+  //     }
+  //   );
+  // }
 
   // Close the modal
   close(): void {

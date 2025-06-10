@@ -1,4 +1,4 @@
-import { Component, Input, input } from '@angular/core';
+import { Component, EventEmitter, Input, input, Output } from '@angular/core';
 import { Product } from '../../../models/product';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
@@ -18,5 +18,9 @@ export class BestDealsComponent {
   }
   goToProductDetails(id: Number) {
     this.router.navigate(['/product-details', id]);
+  }
+  @Output() productChange = new EventEmitter<Product>();
+  selectProduct(product: Product) {
+    this.productChange.emit(product);
   }
 }

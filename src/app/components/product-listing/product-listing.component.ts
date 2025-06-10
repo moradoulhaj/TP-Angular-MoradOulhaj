@@ -5,7 +5,10 @@ import { CategoriesNavComponent } from './categories-nav/categories-nav.componen
 import { FeaturedCarouselComponent } from './featured-carousel/featured-carousel.component';
 import { BestDealsComponent } from './best-deals/best-deals.component';
 import { NewArrivalsComponent } from './new-arrivals/new-arrivals.component';
-import { ProductDetailsModalComponent } from "../common/product-details-modal/product-details-modal.component";
+import { ProductDetailsModalComponent } from '../common/product-details-modal/product-details-modal.component';
+import { CommonModule } from '@angular/common';
+
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-product-listing',
@@ -14,8 +17,9 @@ import { ProductDetailsModalComponent } from "../common/product-details-modal/pr
     FeaturedCarouselComponent,
     BestDealsComponent,
     NewArrivalsComponent,
-    ProductDetailsModalComponent
-],
+    ProductDetailsModalComponent,
+    CommonModule,
+  ],
   templateUrl: './product-listing.component.html',
   styleUrl: './product-listing.component.css',
 })
@@ -25,8 +29,12 @@ export class ProductListingComponent implements OnInit {
   featuredProducts: Product[] = [];
   bestDealsProducts: Product[] = [];
   newArrivalProducts: Product[] = [];
+  selectedProduct: Product | null = null;
 
-  constructor(private productService: ProductService) {}
+  constructor(
+    private productService: ProductService,
+    private cdr: ChangeDetectorRef
+  ) {}
 
   ngOnInit(): void {
     this.productService.fetchAllProducts().subscribe({
@@ -86,5 +94,10 @@ export class ProductListingComponent implements OnInit {
   onCategoryChange(category: string): void {
     this.selectedCategory = category;
     this.loadFeaturedProducts(category);
+  }
+
+  selectProduct(product: Product | null): void {
+    this.selectedProduct = product;
+    this.cdr.detectChanges();
   }
 }
