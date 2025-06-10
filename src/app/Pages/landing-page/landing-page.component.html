@@ -155,4 +155,20 @@
       </button>
     </div>
   </section>
+  <section class="py-16 bg-amber-600 text-white" *ngIf="isLoggedIn">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold mb-6">
+        Ready to Begin Your Reading Journey?
+      </h2>
+      <p class="text-xl mb-8">
+        Join thousands of happy readers discovering new worlds through books.
+      </p>
+      <button
+        (click)="goToProducts()"
+        class="bg-white text-amber-600 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg text-lg transition duration-300"
+      >
+        Explore Books
+      </button>
+    </div>
+  </section>
 </body>

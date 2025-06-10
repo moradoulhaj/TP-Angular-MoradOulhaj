@@ -22,6 +22,9 @@ export class LandingPageComponent {
   goToSignup (){
     this.router.navigate(['/auth'], { queryParams: { mode: 'signup' } });
   }
+  goToProducts (){
+    this.router.navigate(['/products'])
+  }
 
 
 
