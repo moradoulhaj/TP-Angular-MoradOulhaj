@@ -13,7 +13,7 @@ export class NewArrivalsComponent {
   @Input() products: Product[] = [];
   constructor(private router: Router) {}
 
-  openDetails(product: Product) {
-    this.router.navigate(['/product', product.id]);
+  openDetails(id: Number) {
+    this.router.navigate(['/product-details', id]);
   }
 }
