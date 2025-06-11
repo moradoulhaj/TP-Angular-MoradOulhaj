@@ -14,7 +14,7 @@ export class CartService {
   addToCart(idProduct:  Number, productCount: Number): Observable<any> {
     const url = `${this.apiUrl}?idProduct=${idProduct}&productCount=${productCount}`;
     const headers = new HttpHeaders({
-      Authorization: `Bearer ${this.getToken()}`,
+      token: `Bearer ${this.getToken()}`,
     });
     return this.http.post<any>(url, {}, { headers });
   }
@@ -22,7 +22,7 @@ export class CartService {
   // Get cart details
   getCart(): Observable<any> {
     const headers = new HttpHeaders({
-      Authorization: `Bearer ${this.getToken()}`,
+      token: `Bearer ${this.getToken()}`,
     });
     return this.http.get<any>(this.apiUrl, { headers }); // Send a GET request with headers
   }

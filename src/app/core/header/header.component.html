@@ -23,7 +23,7 @@
                           m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
               />
             </svg>
-            <span class="badge badge-sm indicator-item">8</span>
+            <span class="badge badge-sm indicator-item">{{cart.length}}</span>
           </div>
         </div>
         <div
@@ -31,8 +31,8 @@
           class="card card-compact dropdown-content bg-base-100 z-1 mt-3 w-52 shadow"
         >
           <div class="card-body">
-            <span class="text-lg font-bold">8 Items</span>
-            <span class="text-info">Subtotal: $999</span>
+            <span class="text-lg font-bold">{{cart.length}} Items</span>
+            <span class="text-info">Subtotal: {{cartTotal}}$</span>
             <div class="card-actions">
               <button class="btn btn-primary btn-block">View cart</button>
             </div>
