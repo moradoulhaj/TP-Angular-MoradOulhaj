@@ -130,15 +130,15 @@
             >Quantity:</label
           >
           <div class="join">
-            <button class="btn btn-outline join-item">-</button>
+            <button (click)="decreaseQuantity()" class="btn btn-outline join-item">-</button>
             <input
               id="quantity"
               type="number"
-              value="1"
+              [value]="quantity"
               disabled
               class="input input-bordered join-item text-center w-16"
             />
-            <button class="btn btn-outline join-item">+</button>
+            <button (click)="increaseQuantity()" class="btn btn-outline join-item">+</button>
           </div>
         </div>
 
