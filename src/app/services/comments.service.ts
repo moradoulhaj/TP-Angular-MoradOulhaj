@@ -12,7 +12,7 @@ export class CommentsService {
   constructor(private http: HttpClient) { }
 
   // Fetch comments for a specific product
-  getProductComments(productId: number): Observable<Comment[]> {
+  getProductComments(productId: Number): Observable<Comment[]> {
     const url = `${this.apiUrl}/?idProduct=${productId}`;
     return this.http.get<any>(url);
   }

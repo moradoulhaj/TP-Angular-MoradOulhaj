@@ -5,6 +5,8 @@ import { CommentsService } from '../../../services/comments.service';
 import { Product } from '../../../models/product';
 import { Comment } from '../../../models/comment';
 import { CommonModule } from '@angular/common';
+import { AuthService } from '../../../services/auth.service';
+import { CartService } from '../../../services/cart.service';
 
 @Component({
   selector: 'app-product-details-modal',
@@ -15,47 +17,70 @@ import { CommonModule } from '@angular/common';
 export class ProductDetailsModalComponent implements OnInit {
   @Input() product!: Product; // Accept product ID as input
   comments: Comment[] = []; // Comments for the product
-  @Input() selectProduct!: Function;
+  @Input() selectProduct!: (product: Product | null) => void;
+  isLoggedIn: boolean = false; // Track login status
+  quantity: number = 1; // Dynamic quantity
 
   constructor(
     private productService: ProductService,
     private commentsService: CommentsService,
-    private router: Router
+    private router: Router,
+    private authService: AuthService,
+    private cartService: CartService
   ) {}
 
   ngOnInit(): void {
-    // if (this.productId) {
-    //   this.fetchProductDetails();
-    //   this.fetchComments();
-    // }
+    if (this.product && this.product.id) {
+      this.fetchComments(); // Fetch comments when the component initializes
+    } else {
+      console.error('Product ID is not provided or invalid.');
+    }
+    this.authService.isLoggedIn$.subscribe((status) => {
+      this.isLoggedIn = status;
+    });
   }
 
-  // Fetch product details by ID
-  // fetchProductDetails(): void {
-  //   this.productService.getProductById(this.productId).subscribe(
-  //     (product) => {
-  //       this.product = product;
-  //     },
-  //     (error) => {
-  //       console.error('Error fetching product details:', error);
-  //     }
-  //   );
-  // }
-
   // Fetch comments for the product
-  // fetchComments(): void {
-  //   this.commentsService.getProductComments(this.productId).subscribe(
-  //     (comments) => {
-  //       this.comments = comments;
-  //     },
-  //     (error) => {
-  //       console.error('Error fetching comments:', error);
-  //     }
-  //   );
-  // }
+  fetchComments(): void {
+    this.commentsService.getProductComments(this.product.id).subscribe(
+      (comments) => {
+        this.comments = comments; // Assign fetched comments to the array
+      },
+      (error) => {
+        console.error('Error fetching comments:', error);
+      }
+    );
+  }
+  addToCart(): void {
+    if (this.isLoggedIn) {
+      if (this.product && this.product.id) {
+        this.cartService.addToCart(this.product.id, this.quantity).subscribe({
+          next: (response) => {
+            this.selectProduct(null); // Close the modal after adding to cart
+            console.log('Product added to cart successfully:', response);
+          },
+          error: (error) => {
+            console.error('Error adding product to cart:', error);
+          },
+        });
+      } else {
+        console.error('Product ID is not available.');
+      }
+    } else {
+      this.router.navigate(['/auth'], {
+        queryParams: { mode: 'signin' },
+      });
+    }
+  }
+  // Increase quantity
+  increaseQuantity(): void {
+    this.quantity++;
+  }
 
-  // Close the modal
-  close(): void {
-    this.router.navigate(['/']); // Navigate to the home page or previous route
+  // Decrease quantity
+  decreaseQuantity(): void {
+    if (this.quantity > 1) {
+      this.quantity--;
+    }
   }
 }

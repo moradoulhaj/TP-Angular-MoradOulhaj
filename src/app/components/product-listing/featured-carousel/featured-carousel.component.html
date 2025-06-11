@@ -24,7 +24,11 @@
           <ng-container *ngFor="let category of categories">
             <button
               (click)="selectCategory(category)"
-              class="px-5 py-2.5 bg-gray-300 hover:bg-gray-200 rounded-full border border-gray-200 transition-all flex items-center text-gray-700 hover:text-gray-900"
+              [ngClass]="{
+              'bg-primary text-white': selectedCategory === category,
+              'bg-gray-300 hover:bg-gray-200 text-gray-700 hover:text-gray-900': selectedCategory !== category
+              }"
+              class="px-5 py-2.5 rounded-full border border-gray-200 transition-all flex items-center"
             >
               <span>{{ category }}</span>
             </button>
@@ -117,41 +121,7 @@
                   </div>
                 </div>
       
-                <div class="flex items-center mb-4">
-                  <div class="rating rating-sm">
-                    <input
-                      type="radio"
-                      name="rating-{{ book.id }}"
-                      class="mask mask-star bg-yellow-400"
-                      checked
-                    />
-                    <input
-                      type="radio"
-                      name="rating-{{ book.id }}"
-                      class="mask mask-star bg-yellow-400"
-                      checked
-                    />
-                    <input
-                      type="radio"
-                      name="rating-{{ book.id }}"
-                      class="mask mask-star bg-yellow-400"
-                      checked
-                    />
-                    <input
-                      type="radio"
-                      name="rating-{{ book.id }}"
-                      class="mask mask-star bg-yellow-400"
-                      checked
-                    />
-                    <input
-                      type="radio"
-                      name="rating-{{ book.id }}"
-                      class="mask mask-star bg-yellow-400"
-                    />
-                  </div>
-                  <span class="text-xs text-gray-500 ml-2">(24 reviews)</span>
-                </div>
-      
+             
                 <p class="text-gray-600 text-sm mb-6">
                   {{ book.description }}
                 </p>
