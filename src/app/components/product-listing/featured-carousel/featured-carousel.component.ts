@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class FeaturedCarouselComponent {
   constructor(private router: Router) {}
   @Output() categoryChange = new EventEmitter<string>();
+  @Output() productChange = new EventEmitter<Product>();
 
   @Input() featuredProducts: Product[] = [];
   @Input() categories: string[] = [];
@@ -22,8 +23,10 @@ export class FeaturedCarouselComponent {
     this.selectedCategory = category;
     this.categoryChange.emit(category);
   }
-  selectedProduct?: Product;
   goToProductDetails(id: Number) {
     this.router.navigate(['/product-details', id]);
+  }
+  selectProduct(product: Product) {
+    this.productChange.emit(product);
   }
 }

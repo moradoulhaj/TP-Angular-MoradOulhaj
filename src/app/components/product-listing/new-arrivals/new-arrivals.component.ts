@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Product } from '../../../models/product';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
@@ -15,5 +15,9 @@ export class NewArrivalsComponent {
 
   openDetails(id: Number) {
     this.router.navigate(['/product-details', id]);
+  }
+  @Output() productChange = new EventEmitter<Product>();
+  selectProduct(product: Product) {
+    this.productChange.emit(product);
   }
 }
