@@ -17,7 +17,7 @@ import { CartService } from '../../../services/cart.service';
 export class ProductDetailsModalComponent implements OnInit {
   @Input() product!: Product; // Accept product ID as input
   comments: Comment[] = []; // Comments for the product
-  @Input() selectProduct!: Function;
+  @Input() selectProduct!: (product: Product | null) => void;
   isLoggedIn: boolean = false; // Track login status
   quantity: number = 1; // Dynamic quantity
 
@@ -38,7 +38,6 @@ export class ProductDetailsModalComponent implements OnInit {
     this.authService.isLoggedIn$.subscribe((status) => {
       this.isLoggedIn = status;
     });
-    console.log(this.isLoggedIn);
   }
 
   // Fetch comments for the product
@@ -46,7 +45,6 @@ export class ProductDetailsModalComponent implements OnInit {
     this.commentsService.getProductComments(this.product.id).subscribe(
       (comments) => {
         this.comments = comments; // Assign fetched comments to the array
-        console.log('Comments fetched successfully:', this.comments);
       },
       (error) => {
         console.error('Error fetching comments:', error);
@@ -56,25 +54,26 @@ export class ProductDetailsModalComponent implements OnInit {
   addToCart(): void {
     if (this.isLoggedIn) {
       if (this.product && this.product.id) {
-        this.cartService.addToCart(this.product.id, 1).subscribe(
-          (response) => {
-            console.log('Product added to cart:', response);
+        this.cartService.addToCart(this.product.id, this.quantity).subscribe({
+          next: (response) => {
             this.selectProduct(null); // Close the modal after adding to cart
+            console.log('Product added to cart successfully:', response);
           },
-          (error) => {
+          error: (error) => {
             console.error('Error adding product to cart:', error);
-          }
-        );
+          },
+        });
       } else {
         console.error('Product ID is not available.');
       }
     } else {
-      console.error('User is not logged in.');
+      this.router.navigate(['/auth'], {
+        queryParams: { mode: 'signin' },
+      });
     }
   }
-
-   // Increase quantity
-   increaseQuantity(): void {
+  // Increase quantity
+  increaseQuantity(): void {
     this.quantity++;
   }
 

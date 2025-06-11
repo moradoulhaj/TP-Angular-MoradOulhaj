@@ -78,7 +78,6 @@ export class ProductListingComponent implements OnInit {
       .filter((p) => p.promotionPercent != null)
       .sort((a, b) => b.promotionPercent! - a.promotionPercent!)
       .slice(0, 6);
-    console.log('dd', this.bestDealsProducts);
   }
 
   loadNewArrivals(products: Product[]): void {

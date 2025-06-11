@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CartService {
   private apiUrl = 'http://localhost:8000/api/v1/carts'; // Base API URL for cart
@@ -11,18 +11,18 @@ export class CartService {
   constructor(private http: HttpClient) {}
 
   // Add product to cart
-  addToCart(idProduct:Number, productCount: Number): Observable<any> {
+  addToCart(idProduct:  Number, productCount: Number): Observable<any> {
     const url = `${this.apiUrl}?idProduct=${idProduct}&productCount=${productCount}`;
     const headers = new HttpHeaders({
-      Authorization: `Bearer ${this.getToken()}`
+      Authorization: `Bearer ${this.getToken()}`,
     });
-    return this.http.post<any>(url, {}, { headers }); // Send a POST request with headers
+    return this.http.post<any>(url, {}, { headers });
   }
 
   // Get cart details
   getCart(): Observable<any> {
     const headers = new HttpHeaders({
-      Authorization: `Bearer ${this.getToken()}`
+      Authorization: `Bearer ${this.getToken()}`,
     });
     return this.http.get<any>(this.apiUrl, { headers }); // Send a GET request with headers
   }

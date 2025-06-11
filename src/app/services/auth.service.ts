@@ -63,17 +63,14 @@ export class AuthService {
 
   logout(): void {
     const headers = this.getAuthHeaders();
-  console.log("up")
     this.http.post(`${this.apiUrl}/logout`, {}, { headers }).subscribe({
       next: () => {
-        console.log("next")
 
         this.clearSession();
         this.loggedIn.next(false);
       },
       error: () => {
         // Even if API fails, still log the user out
-        console.log("eror")
 
         this.clearSession();
         this.loggedIn.next(false);
