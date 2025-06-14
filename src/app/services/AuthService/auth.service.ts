@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, BehaviorSubject, tap, catchError, of } from 'rxjs';
-import { User } from '../models/User';
+import { User } from '../../models/User';
 
 @Injectable({
   providedIn: 'root',
@@ -60,12 +60,10 @@ export class AuthService {
     );
   }
 
-
   logout(): void {
     const headers = this.getAuthHeaders();
     this.http.post(`${this.apiUrl}/logout`, {}, { headers }).subscribe({
       next: () => {
-
         this.clearSession();
         this.loggedIn.next(false);
       },
@@ -74,10 +72,10 @@ export class AuthService {
 
         this.clearSession();
         this.loggedIn.next(false);
-      }
+      },
     });
   }
-  
+
   /** Synchronous check if user is logged in (token exists) */
   isLoggedIn(): boolean {
     return this.hasToken();

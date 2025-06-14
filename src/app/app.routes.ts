@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { AuthComponent } from './auth/auth.component';
 import { CartComponent } from './components/cart/cart.component';
-import { ProductDetailsModalComponent } from './components/common/product-details-modal/product-details-modal.component';
+import { ProductDetailsModalComponent } from './components/modals/product-details-modal/product-details-modal.component';
 import { ProductListingComponent } from './components/product-listing/product-listing.component';
 import { LandingPageComponent } from './Pages/landing-page/landing-page.component';
 

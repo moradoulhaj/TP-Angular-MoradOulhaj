@@ -2,8 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { AuthService } from '../../services/auth.service';
-import { CartService } from '../../services/cart.service';
+import { AuthService } from '../../services/AuthService/auth.service';
+import { CartService } from '../../services/cartService/cart.service';
 import { Cart } from '../../models/cart';
 import { User } from '../../models/User';
 

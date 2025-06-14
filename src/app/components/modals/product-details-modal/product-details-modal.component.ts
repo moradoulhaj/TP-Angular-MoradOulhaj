@@ -1,12 +1,12 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ProductService } from '../../../services/product.service';
-import { CommentsService } from '../../../services/comments.service';
+import { ProductService } from '../../../services/productService/product.service';
+import { CommentsService } from '../../../services/commentsService/comments.service';
 import { Product } from '../../../models/product';
 import { Comment } from '../../../models/comment';
 import { CommonModule } from '@angular/common';
-import { AuthService } from '../../../services/auth.service';
-import { CartService } from '../../../services/cart.service';
+import { AuthService } from '../../../services/AuthService/auth.service';
+import { CartService } from '../../../services/cartService/cart.service';
 
 @Component({
   selector: 'app-product-details-modal',
