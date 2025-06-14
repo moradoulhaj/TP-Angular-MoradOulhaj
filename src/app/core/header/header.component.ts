@@ -65,9 +65,12 @@ export class HeaderComponent implements OnInit, OnDestroy {
       case 'products':
         this.router.navigate(['/products']);
         break;
-        case 'home':
-          this.router.navigate(['/']);
-          break;
+      case 'home':
+        this.router.navigate(['/']);
+        break;
+      case 'cart':
+        this.router.navigate(['/cart']);
+        break;
       default:
         console.warn('Unknown destination:', destination);
         break;
