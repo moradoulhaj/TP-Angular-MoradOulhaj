@@ -27,6 +27,8 @@ export class CartService {
     return this.http.get<any>(this.apiUrl, { headers }); // Send a GET request with headers
   }
 
+
+
   // Helper method to get the token
   private getToken(): string {
     // Replace this with your actual logic to retrieve the token (e.g., from localStorage or a service)
