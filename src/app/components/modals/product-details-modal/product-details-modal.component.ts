@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductService } from '../../../services/productService/product.service';
-import { CommentsService } from '../../../services/commentsService/comments.service';
+import { CommentsService } from '../../../services/commentService/comments.service';
 import { Product } from '../../../models/product';
 import { Comment } from '../../../models/comment';
 import { CommonModule } from '@angular/common';

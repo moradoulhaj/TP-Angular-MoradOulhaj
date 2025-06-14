@@ -3,6 +3,7 @@ import { CartService } from '../../services/cartService/cart.service';
 import { Cart } from '../../models/cart';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { CommandeService } from '../../services/CommandeService/commande.service';
 
 @Component({
   selector: 'app-cart',
@@ -12,7 +13,7 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './cart.component.css',
 })
 export class CartComponent implements OnInit {
-  constructor(private cartService: CartService) {}
+  constructor(private cartService: CartService,private commandeService : CommandeService) {}
   cart: Cart[] = []; // Initialize cart as an empty array
   cartTotal: number = 0; // Holds the total cost of the cart
   address: string = ''; // Holds the address for checkout
@@ -39,7 +40,37 @@ export class CartComponent implements OnInit {
   }
 
   checkout(): void {
-    console.log(this.address);
-    
+    // Retrieve user information from local storage
+    const userInfo = JSON.parse(localStorage.getItem('user') || '{}');
+    const idUser :number= userInfo.id || '';
+    const phone = userInfo.phone || '';
+    const fullname = userInfo.fullname || '';
+
+    // Use the adresse input value
+    const address = this.address; // Ensure 'address' is bound to the input field using [(ngModel)]
+
+    // Calculate the total price
+    const total = this.cart.reduce((sum, item) => sum + item.priceProduct * item.count, 0);
+
+    // Prepare the data object
+    const historyData = {
+      idUser,
+      phone,
+      address,
+      fullname,
+      total,
+      cart: this.cart
+    };
+
+    // Call the service to create history
+    this.commandeService.createHistory(historyData).subscribe(
+      (response) => {
+        console.log('Checkout successful:', response);
+        // Optionally clear the cart or show a success message
+      },
+      (error) => {
+        console.error('Error during checkout:', error);
+      }
+    );
   }
 }
