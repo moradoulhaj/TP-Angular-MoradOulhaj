@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, input, Output } from '@angular/core';
-import { Product } from '../../../models/product';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { Product } from '../../../../models/product';
 
 @Component({
   selector: 'app-best-deals',

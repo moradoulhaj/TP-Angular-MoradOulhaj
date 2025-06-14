@@ -1,19 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { CartService } from '../../services/cartService/cart.service';
-import { Cart } from '../../models/cart';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { CommandeService } from '../../services/CommandeService/commande.service';
+import { Router } from '@angular/router';
+import { CartService } from '../../../services/cartService/cart.service';
+import { Cart } from '../../../models/cart';
+import { CommandeService } from '../../../services/CommandeService/commande.service';
 
 @Component({
   selector: 'app-cart',
-  imports: [CommonModule,FormsModule
-  ] ,
+  imports: [CommonModule, FormsModule],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.css',
 })
 export class CartComponent implements OnInit {
-  constructor(private cartService: CartService,private commandeService : CommandeService) {}
+  constructor(
+    private cartService: CartService,
+    private router: Router,
+    private commandeService: CommandeService
+  ) {}
   cart: Cart[] = []; // Initialize cart as an empty array
   cartTotal: number = 0; // Holds the total cost of the cart
   address: string = ''; // Holds the address for checkout
@@ -42,7 +46,7 @@ export class CartComponent implements OnInit {
   checkout(): void {
     // Retrieve user information from local storage
     const userInfo = JSON.parse(localStorage.getItem('user') || '{}');
-    const idUser :number= userInfo.id || '';
+    const idUser: number = userInfo.id || '';
     const phone = userInfo.phone || '';
     const fullname = userInfo.fullname || '';
 
@@ -50,7 +54,10 @@ export class CartComponent implements OnInit {
     const address = this.address; // Ensure 'address' is bound to the input field using [(ngModel)]
 
     // Calculate the total price
-    const total = this.cart.reduce((sum, item) => sum + item.priceProduct * item.count, 0);
+    const total = this.cart.reduce(
+      (sum, item) => sum + item.priceProduct * item.count,
+      0
+    );
 
     // Prepare the data object
     const historyData = {
@@ -59,18 +66,16 @@ export class CartComponent implements OnInit {
       address,
       fullname,
       total,
-      cart: this.cart
+      cart: this.cart,
     };
 
     // Call the service to create history
     this.commandeService.createHistory(historyData).subscribe(
       (response) => {
-        console.log('Checkout successful:', response);
+        this.router.navigate(['/commandes']); // Navigate to the commandes page after successful checkout
         // Optionally clear the cart or show a success message
       },
-      (error) => {
-        console.error('Error during checkout:', error);
-      }
+      (error) => {}
     );
   }
 }

@@ -68,6 +68,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
       case 'home':
         this.router.navigate(['/']);
         break;
+        case 'commandes':
+          this.router.navigate(['/commandes']);
+          break;
       case 'cart':
         this.router.navigate(['/cart']);
         break;

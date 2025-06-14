@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Product } from '../../../models/product';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { Product } from '../../../../models/product';
 
 @Component({
   selector: 'app-new-arrivals',

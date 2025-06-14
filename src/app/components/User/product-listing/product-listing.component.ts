@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../../models/product';
-import { ProductService } from '../../services/productService/product.service';
 import { CategoriesNavComponent } from './categories-nav/categories-nav.component';
 import { FeaturedCarouselComponent } from './featured-carousel/featured-carousel.component';
 import { BestDealsComponent } from './best-deals/best-deals.component';
 import { NewArrivalsComponent } from './new-arrivals/new-arrivals.component';
-import { ProductDetailsModalComponent } from '../modals/product-details-modal/product-details-modal.component';
 import { CommonModule } from '@angular/common';
 
 import { ChangeDetectorRef } from '@angular/core';
+import { Product } from '../../../models/product';
+import { ProductService } from '../../../services/productService/product.service';
+import { ProductDetailsModalComponent } from '../product-details-modal/product-details-modal.component';
 
 @Component({
   selector: 'app-product-listing',
