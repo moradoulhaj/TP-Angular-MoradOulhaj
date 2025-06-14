@@ -26,4 +26,12 @@ export class CartComponent implements OnInit {
       },
     });
   }
+
+  removeFromCart(cartid: number): void {
+    this.cart = this.cart.filter((item) => item.id !== cartid); // Update the cart array
+    this.cartTotal = this.cart.reduce((total, item) => {
+      return total + item.priceProduct * item.count; // Recalculate the cart total
+    }, 0);
+    console.log('Item removed from cart:', cartid);
+  }
 }
