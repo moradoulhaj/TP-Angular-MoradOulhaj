@@ -41,7 +41,7 @@
           <span class="text-lg font-bold">{{ cart.length }} Items</span>
           <span class="text-info">Subtotal: {{ cartTotal }}$</span>
           <div class="card-actions">
-            <button class="btn btn-primary btn-block">View cart</button>
+            <button class="btn btn-primary btn-block" (click)="goTo('cart')">View cart</button>
           </div>
         </div>
       </div>
