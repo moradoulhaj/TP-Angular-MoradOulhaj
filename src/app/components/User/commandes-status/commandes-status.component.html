@@ -1,1 +1,53 @@
-<p>commandes-status works!</p>
+<div class="container mx-auto p-6 min-h-[70vh]">
+    <h2 class="text-3xl font-bold mb-8 text-gray-900">Order History</h2>
+  
+    <!-- Check if there are any orders -->
+    <div *ngIf="history.length > 0; else noOrders" class="space-y-6">
+      <div *ngFor="let order of history" class="p-6 bg-white rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+        <!-- Order Header -->
+        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4 gap-2">
+          <h3 class="text-xl font-semibold text-gray-800">Order #{{ order.id }}</h3>
+          <span
+            class="px-3 py-1 text-sm font-medium rounded-full w-fit"
+            [ngClass]="{
+              'bg-yellow-100 text-yellow-800': order.status === 0,
+              'bg-green-100 text-green-800': order.status === 1,
+              'bg-gray-100 text-gray-800': order.status !== 0 && order.status !== 1
+            }"
+          >
+            {{ order.status === 0 ? 'Pending' : (order.status === 1 ? 'Completed' : 'Unknown Status') }}
+          </span>
+        </div>
+  
+        <!-- Order Details -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="space-y-2">
+            <p class="text-gray-700"><span class="font-medium text-gray-900">Contact:</span> {{ order.phone }}</p>
+            <p class="text-gray-700"><span class="font-medium text-gray-900">Address:</span> {{ order.address }}</p>
+            <p class="text-gray-700"><span class="font-medium text-gray-900">Customer:</span> {{ order.fullname }}</p>
+          </div>
+          <div class="space-y-2">
+            <p class="text-gray-700"><span class="font-medium text-gray-900">Total:</span> ${{ order.total | number: '1.2-2' }}</p>
+            <p class="text-gray-700">
+              <span class="font-medium text-gray-900">Delivery:</span> 
+              <span [ngClass]="{'text-green-600': order.delivery === 1, 'text-yellow-600': order.delivery === 0}">
+                {{ order.delivery === 0 ? 'Processing' : 'Delivered' }}
+              </span>
+            </p>
+            <p class="text-gray-700"><span class="font-medium text-gray-900">Order Date:</span> {{ order.createdAt | date: 'medium' }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- No Orders Message -->
+    <ng-template #noOrders>
+      <div class="flex flex-col items-center justify-center py-20 h-full">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-gray-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+        <p class="text-gray-500 text-lg mb-2">You have no orders yet.</p>
+        <p class="text-gray-400 text-sm">Start shopping to see your order history here.</p>
+      </div>
+    </ng-template>
+  </div>
