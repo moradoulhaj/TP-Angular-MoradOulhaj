@@ -17,27 +17,41 @@ export class AuthComponent {
   signInData = { email: '', password: '' };
   signUpData = { fullname: '', email: '', password: '', phone: '' };
 
+  returnUrl: string = '/';
+
   constructor(
     private auth: AuthService,
     private router: Router,
     private route: ActivatedRoute
-  ) {}
+  ) {
+    // Récupère l'URL de redirection initiale
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+  }
 
   ngOnInit(): void {
+    // Surveille les changements de paramètres pour le mode (signin/signup)
     this.route.queryParams.subscribe((params) => {
       this.isSignUp = params['mode'] === 'signup';
+      
+      // Met à jour le returnUrl si il change dans les queryParams
+      if (params['returnUrl']) {
+        this.returnUrl = params['returnUrl'];
+      }
     });
   }
 
   toggleMode() {
     this.isSignUp = !this.isSignUp;
-    this.errorMessage = ''; // clear errors
+    this.errorMessage = '';
 
-    // Update the URL query parameter without reloading the page
+    // Met à jour l'URL avec le nouveau mode tout en conservant le returnUrl
     this.router.navigate([], {
       relativeTo: this.route,
-      queryParams: { mode: this.isSignUp ? 'signup' : 'signin' },
-      queryParamsHandling: 'merge', // preserve other params
+      queryParams: { 
+        mode: this.isSignUp ? 'signup' : 'signin',
+        returnUrl: this.returnUrl !== '/' ? this.returnUrl : null
+      },
+      queryParamsHandling: 'merge',
     });
   }
 
@@ -47,10 +61,15 @@ export class AuthComponent {
       next: (user) => {
         localStorage.setItem('token', user.token);
         localStorage.setItem('user', JSON.stringify(user));
-        this.router.navigate(['/']);
+        
+        // Redirection vers l'URL de retour ou la page d'accueil
+        this.router.navigateByUrl(this.returnUrl).then(() => {
+          // Réinitialise le returnUrl après la redirection
+          this.returnUrl = '/';
+        });
       },
-      error: () => {
-        this.errorMessage = 'Something went wrong during login.';
+      error: (error) => {
+        this.errorMessage = error.message || 'Something went wrong during login.';
       },
     });
   }
@@ -66,10 +85,14 @@ export class AuthComponent {
       )
       .subscribe({
         next: () => {
-          this.toggleMode(); // after successful signup, switch to sign-in form & update URL param
+          // Après inscription réussie, bascule vers le mode connexion
+          this.toggleMode();
+          
+          // Réinitialise les données du formulaire d'inscription
+          this.signUpData = { fullname: '', email: '', password: '', phone: '' };
         },
-        error: () => {
-          this.errorMessage = 'Something went wrong during registration.';
+        error: (error) => {
+          this.errorMessage = error.message || 'Something went wrong during registration.';
         },
       });
   }

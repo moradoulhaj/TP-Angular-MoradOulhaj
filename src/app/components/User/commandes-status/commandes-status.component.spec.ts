@@ -1,18 +1,19 @@
+
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CheckoutModalComponent } from './checkout-modal.component';
+import { CommandesStatusComponent } from './commandes-status.component';
 
-describe('CheckoutModalComponent', () => {
-  let component: CheckoutModalComponent;
-  let fixture: ComponentFixture<CheckoutModalComponent>;
+describe('CommandesStatusComponent', () => {
+  let component: CommandesStatusComponent;
+  let fixture: ComponentFixture<CommandesStatusComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CheckoutModalComponent]
+      imports: [CommandesStatusComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CheckoutModalComponent);
+    fixture = TestBed.createComponent(CommandesStatusComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
