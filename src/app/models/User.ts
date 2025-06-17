@@ -3,7 +3,7 @@ export interface User {
     fullname: string;
     email: string;
     phone: string;
-    admin: string;
+    admin: boolean;
     createdAt: string;
     updatedAt: string;
     token: string;

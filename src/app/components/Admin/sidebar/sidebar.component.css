@@ -1,0 +1,39 @@
+/* Active link styling */
+.router-link-active {
+    background-color: #4ade80; /* bg-green-400 */
+    color: white;
+  }
+  
+  /* Hover effect */
+  .hover\:bg-gray-700:hover {
+    background-color: #4b5563; /* bg-gray-700 */
+    transition: all 0.3s ease;
+  }
+  
+  /* Sidebar scrollbar styling */
+  .overflow-y-auto::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .overflow-y-auto::-webkit-scrollbar-track {
+    background: #1f2937; /* bg-gray-800 */
+  }
+  
+  .overflow-y-auto::-webkit-scrollbar-thumb {
+    background-color: #4ade80; /* bg-green-400 */
+    border-radius: 20px;
+  }
+
+  /* Smooth transitions for sidebar items */
+.sidebar-item {
+    transition: all 0.2s ease;
+  }
+  
+  .sidebar-item:hover {
+    transform: translateX(2px);
+  }
+  
+  /* Active state enhancement */
+  .router-link-active {
+    box-shadow: inset 3px 0 0 0 #4ade80; /* Green left border */
+  }

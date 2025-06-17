@@ -99,4 +99,10 @@ export class AuthService {
   private hasToken(): boolean {
     return !!localStorage.getItem('token');
   }
+
+  /** Helper to know if user is admin */
+  public isAdmin(): boolean {
+    const user = JSON.parse(localStorage.getItem('user') || '{}');
+    return user && user.admin === '1';
+  }
 }
