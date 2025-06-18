@@ -25,7 +25,6 @@ export class CommandeService {
       img: string;
     }>;
   }): Observable<any> {
-    console.log(historyData);
     
     return this.http.post(this.apiUrl, historyData);
   }

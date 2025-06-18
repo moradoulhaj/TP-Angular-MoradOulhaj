@@ -19,7 +19,6 @@ export class CommandesStatusComponent implements OnInit {
     this.commandeService.getHistoryByUserId(idUser).subscribe({
       next: (history) => {
         this.history = history; // Update the history with the fetched data
-        console.log('Order history:', this.history); // Log the fetched history for debugging
       },
       error: (error) => {
         console.error('Error fetching order history:', error);

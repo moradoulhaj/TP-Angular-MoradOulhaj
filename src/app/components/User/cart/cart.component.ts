@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { CartService } from '../../../services/cartService/cart.service';
+import { CartService } from '../../../services/CartService/cart.service';
 import { Cart } from '../../../models/cart';
 import { CommandeService } from '../../../services/CommandeService/commande.service';
 
@@ -40,7 +40,6 @@ export class CartComponent implements OnInit {
     this.cartTotal = this.cart.reduce((total, item) => {
       return total + item.priceProduct * item.count; // Recalculate the cart total
     }, 0);
-    console.log('Item removed from cart:', cartid);
   }
 
   checkout(): void {

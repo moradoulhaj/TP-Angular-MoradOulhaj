@@ -15,7 +15,6 @@ export class AppComponent {
   constructor(private authSerivce: AuthService) {}
   title = 'ecommerce-app';
   isAdmin(): boolean {
-    console.log('Is Admin:', this.authSerivce.isAdmin());
     
     return this.authSerivce.isAdmin();
   }

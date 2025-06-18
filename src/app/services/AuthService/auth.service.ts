@@ -45,12 +45,7 @@ export class AuthService {
     });
   }
 
-  /** Get all users (admin only) */
-  getAllUsers(): Observable<User[]> {
-    const headers = this.getAuthHeaders();
-    return this.http.get<User[]>(`${this.apiUrl}/`, { headers });
-  }
-
+ 
   /** Refresh JWT token */
   refreshToken(): Observable<any> {
     return this.http.post(

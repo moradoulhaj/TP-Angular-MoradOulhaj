@@ -21,7 +21,6 @@ export class SidebarComponent {
     if (userData) {
       try {
         this.user = JSON.parse(userData) as User;
-        console.log('User retrieved:', this.user);
       } catch (error) {
         console.error('Error parsing user data from local storage:', error);
         this.user = null;

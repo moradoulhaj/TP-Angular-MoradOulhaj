@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
 
 import { ChangeDetectorRef } from '@angular/core';
 import { Product } from '../../../models/product';
-import { ProductService } from '../../../services/productService/product.service';
+import { ProductService } from '../../../services/ProductService/product.service';
 import { ProductDetailsModalComponent } from '../product-details-modal/product-details-modal.component';
 
 @Component({
