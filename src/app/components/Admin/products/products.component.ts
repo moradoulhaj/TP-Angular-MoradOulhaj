@@ -38,4 +38,8 @@ export class ProductsComponent implements OnInit {
     // Implement delete functionality
     console.log('Delete product with ID:', productId);
   }
+  createProduct(): void {
+    // Implement create functionality
+    console.log('Create new product');
+  }
 }
