@@ -12,7 +12,7 @@ export interface Comment {
   createdAt: Date;
   updatedAt: Date;
 };
-export interface CommentCreate {
+export interface newComment {
   idProduct: Number;
   idUser: Number;
   fullname: string;
