@@ -1,18 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, Query } from '@angular/core';
 import { User } from '../../../models/User';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { AuthService } from '../../../services/AuthService/auth.service';
 
 @Component({
   selector: 'app-admin-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css'],
-  imports: [RouterLinkActive,RouterLink],
+  imports: [RouterLinkActive, RouterLink],
 })
 export class SidebarComponent {
   user: User | null = null;
 
-  constructor() {
+  constructor(private router: Router,private authService: AuthService) {
     this.getUserFromLocalStorage();
+
   }
 
   /** Retrieve user information from local storage */
@@ -30,4 +32,9 @@ export class SidebarComponent {
       this.user = null;
     }
   }
+
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['/auth'], { queryParams: { mode: 'signin' } });
+  }    
 }

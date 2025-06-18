@@ -5,7 +5,7 @@ export interface History {
   phone: number,
   address: string,
   cart: number,
-  fullname: number,
+  fullname: string,
   total: number,
   status: number,
   delivery: number,
