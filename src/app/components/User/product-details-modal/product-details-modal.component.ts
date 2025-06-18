@@ -1,12 +1,12 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ProductService } from '../../../services/productService/product.service';
-import { CommentsService } from '../../../services/commentService/comments.service';
+import { ProductService } from '../../../services/ProductService/product.service';
+import { CommentsService } from '../../../services/CommentService/comments.service';
 import { Product } from '../../../models/product';
 import { Comment, newComment } from '../../../models/comment';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../../services/AuthService/auth.service';
-import { CartService } from '../../../services/cartService/cart.service';
+import { CartService } from '../../../services/CartService/cart.service';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -71,7 +71,6 @@ export class ProductDetailsModalComponent implements OnInit {
         this.cartService.addToCart(this.product.id, this.quantity).subscribe({
           next: (response) => {
             this.selectProduct(null); // Close the modal after adding to cart
-            console.log('Product added to cart successfully:', response);
           },
           error: (error) => {
             console.error('Error adding product to cart:', error);

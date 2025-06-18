@@ -3,7 +3,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AuthService } from '../../services/AuthService/auth.service';
-import { CartService } from '../../services/cartService/cart.service';
+import { CartService } from '../../services/CartService/cart.service';
 import { Cart } from '../../models/cart';
 import { User } from '../../models/User';
 
@@ -68,9 +68,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
       case 'home':
         this.router.navigate(['/']);
         break;
-        case 'commandes':
-          this.router.navigate(['/commandes']);
-          break;
+      case 'commandes':
+        this.router.navigate(['/commandes']);
+        break;
       case 'cart':
         this.router.navigate(['/cart']);
         break;

@@ -25,7 +25,8 @@ export class AuthComponent {
     private route: ActivatedRoute
   ) {
     // Récupère l'URL de redirection initiale
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+    
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] ||'/admin';
   }
 
   ngOnInit(): void {

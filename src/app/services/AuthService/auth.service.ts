@@ -45,12 +45,7 @@ export class AuthService {
     });
   }
 
-  /** Get all users (admin only) */
-  getAllUsers(): Observable<User[]> {
-    const headers = this.getAuthHeaders();
-    return this.http.get<User[]>(`${this.apiUrl}/`, { headers });
-  }
-
+ 
   /** Refresh JWT token */
   refreshToken(): Observable<any> {
     return this.http.post(
@@ -98,5 +93,11 @@ export class AuthService {
   /** Helper to check token existence */
   private hasToken(): boolean {
     return !!localStorage.getItem('token');
+  }
+
+  /** Helper to know if user is admin */
+  public isAdmin(): boolean {
+    const user = JSON.parse(localStorage.getItem('user') || '{}');
+    return user && user.admin === '1';
   }
 }
