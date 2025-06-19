@@ -15,6 +15,8 @@ import { User } from '../../models/User';
   imports: [CommonModule],
 })
 export class HeaderComponent implements OnInit, OnDestroy {
+  currentLang: string;
+
   cart: Cart[] = []; // Initialize cart as an empty array
   isLoggedIn = false;
   user: User | null = null; // Holds the current user information, initialized to null
@@ -25,7 +27,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
     private authService: AuthService,
     private router: Router,
     private cartService: CartService
-  ) {}
+  ) {
+    this.currentLang = this.router.url.split('/')[1] || 'en-US';
+  }
 
   ngOnInit() {
     this.subscription = this.authService.isLoggedIn$.subscribe((status) => {
@@ -83,5 +87,13 @@ export class HeaderComponent implements OnInit, OnDestroy {
   logout() {
     this.authService.logout();
     this.router.navigate(['/auth']); // navigate immediately
+  }
+  switchLang(lang: string) {
+    const segments = this.router.url.split('/');
+    if (segments[1] === lang) return;
+
+    segments[1] = lang;
+    const newUrl = segments.slice(1).join('/');
+    this.router.navigateByUrl(`/${newUrl}`);
   }
 }

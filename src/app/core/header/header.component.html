@@ -56,6 +56,15 @@
         <li><a (click)="logout()" i18n>Logout</a></li>
       </ul>
     </div>
+    <div class="dropdown dropdown-end ml-4">
+      <div tabindex="0" role="button" class="btn btn-outline btn-primary">
+        🌐 {{ currentLang.toUpperCase() }}
+      </div>
+      <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 z-10 mt-2 w-40 p-2 shadow rounded-box">
+        <li><a (click)="switchLang('en-US')">🇺🇸 English</a></li>
+        <li><a (click)="switchLang('fr-CA')">🇨🇦 Français</a></li>
+      </ul>
+    </div>
   </div>
 
   <!-- If Not Logged In -->
@@ -64,5 +73,15 @@
     <a class="btn btn-outline btn-primary" (click)="goTo('products')" i18n>Explore Products</a>
     <a class="btn btn-outline btn-primary" (click)="goTo('signup')" i18n>Create Account</a>
     <a class="btn btn-outline btn-primary" (click)="goTo('login')" i18n>Sign In</a>
+    <!-- Language Switcher -->
+<div class="dropdown dropdown-end ml-4">
+  <div tabindex="0" role="button" class="btn btn-outline btn-primary">
+    🌐 {{ currentLang.toUpperCase() }}
+  </div>
+  <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 z-10 mt-2 w-40 p-2 shadow rounded-box">
+    <li><a (click)="switchLang('en-US')">🇺🇸 English</a></li>
+    <li><a (click)="switchLang('fr-CA')">🇨🇦 Français</a></li>
+  </ul>
+</div>
   </div>
 </div>

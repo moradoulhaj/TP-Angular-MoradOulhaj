@@ -2,7 +2,7 @@ const express = require("express");
 const path = require("path");
 
 const app = express();
-const PORT = 8085;
+const PORT = 4200;
 
 const LOCALES = ["fr-CA", "en-US"]; // add all your locales here
 
