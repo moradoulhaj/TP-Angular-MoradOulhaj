@@ -12,6 +12,7 @@ LOCALES.forEach((locale) => {
     __dirname,
     "dist",
     "ecommerce-app",
+    
     "browser",
     locale
   );
