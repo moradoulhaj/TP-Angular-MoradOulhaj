@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" target-language="fr" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="7536656933632098637" datatype="html">
+        <source> Welcome to Book Haven </source>
+        <target>Bienvenue chez Book Haven</target>
+      </trans-unit>
+      <trans-unit id="8336731658310332880" datatype="html">
+        <source> Your premier destination for digital and physical books. We bridge the gap between readers and authors worldwide. </source>
+        <target>Votre destination de choix pour les livres numériques et physiques. Nous rapprochons lecteurs et auteurs du monde entier.</target>
+      </trans-unit>
+      <trans-unit id="1629250728691974117" datatype="html">
+        <source> Why Readers Choose Us </source>
+        <target>Pourquoi les lecteurs nous choisissent</target>
+      </trans-unit>
+      <trans-unit id="7012160989901002577" datatype="html">
+        <source>50,000+</source>
+        <target>50 000+</target>
+      </trans-unit>
+      <trans-unit id="3941845638029011953" datatype="html">
+        <source>Books in Collection</source>
+        <target>Livres en collection</target>
+      </trans-unit>
+      <trans-unit id="1452879700337138949" datatype="html">
+        <source> Curated selection across all genres </source>
+        <target>Sélection soignée de tous les genres</target>
+      </trans-unit>
+      <trans-unit id="6469965877314768202" datatype="html">
+        <source>1.2M+</source>
+        <target>1,2 M+</target>
+      </trans-unit>
+      <trans-unit id="7125075520911283522" datatype="html">
+        <source>Active Members</source>
+        <target>Membres actifs</target>
+      </trans-unit>
+      <trans-unit id="9080795476862831850" datatype="html">
+        <source>Join our growing community</source>
+        <target>Rejoignez notre communauté en pleine croissance</target>
+      </trans-unit>
+      <trans-unit id="4647420985559149133" datatype="html">
+        <source>24h</source>
+        <target>24h</target>
+      </trans-unit>
+      <trans-unit id="4068964313735561914" datatype="html">
+        <source>Delivery Promise</source>
+        <target>Livraison garantie</target>
+      </trans-unit>
+      <trans-unit id="7865984944987892336" datatype="html">
+        <source>For most metropolitan areas</source>
+        <target>Dans la plupart des zones métropolitaines</target>
+      </trans-unit>
+      <trans-unit id="7469753398818290612" datatype="html">
+        <source>Our Story</source>
+        <target>Notre Histoire</target>
+      </trans-unit>
+      <trans-unit id="448775099454222480" datatype="html">
+        <source> Founded in 2010, Book Haven began as a small independent bookstore with a passion for connecting readers with great literature. </source>
+        <target>Fondée en 2010, Book Haven a débuté comme une petite librairie indépendante passionnée par la littérature.</target>
+      </trans-unit>
+      <trans-unit id="1031395762503291764" datatype="html">
+        <source> Today, we&apos;ve grown into a comprehensive platform serving readers worldwide, while maintaining our commitment to personalized service and quality curation. </source>
+        <target>Aujourd'hui, nous sommes une plateforme mondiale tout en gardant notre engagement pour un service personnalisé et une curation de qualité.</target>
+      </trans-unit>
+      <trans-unit id="1411783196917084076" datatype="html">
+        <source> Our mission is to make reading accessible, enjoyable, and rewarding for everyone. </source>
+        <target>Notre mission est de rendre la lecture accessible, agréable et enrichissante pour tous.</target>
+      </trans-unit>
+      <trans-unit id="1553104154954622827" datatype="html">
+        <source>What We Offer</source>
+        <target>Ce que nous offrons</target>
+      </trans-unit>
+      <trans-unit id="2093762805500369338" datatype="html">
+        <source>Curated Collections</source>
+        <target>Collections sélectionnées</target>
+      </trans-unit>
+      <trans-unit id="8410391023553510553" datatype="html">
+        <source> Expertly selected books tailored to your interests and reading level. </source>
+        <target>Des livres soigneusement sélectionnés selon vos intérêts et votre niveau.</target>
+      </trans-unit>
+      <trans-unit id="3205115158560621621" datatype="html">
+        <source>Reading Clubs</source>
+        <target>Clubs de lecture</target>
+      </trans-unit>
+      <trans-unit id="6743079852942072173" datatype="html">
+        <source> Join our vibrant community of readers for discussions and events. </source>
+        <target>Rejoignez notre communauté dynamique de lecteurs pour des discussions et des événements.</target>
+      </trans-unit>
+      <trans-unit id="175799849397386117" datatype="html">
+        <source>Membership Benefits</source>
+        <target>Avantages des membres</target>
+      </trans-unit>
+      <trans-unit id="7480767574101881848" datatype="html">
+        <source> Exclusive discounts, early access, and personalized recommendations. </source>
+        <target>Réductions exclusives, accès anticipé et recommandations personnalisées.</target>
+      </trans-unit>
+      <trans-unit id="6295473926901297831" datatype="html">
+        <source> Ready to Begin Your Reading Journey? </source>
+        <target>Prêt à commencer votre aventure de lecture ?</target>
+      </trans-unit>
+      <trans-unit id="8527590698165940539" datatype="html">
+        <source> Join thousands of happy readers discovering new worlds through books. </source>
+        <target>Rejoignez des milliers de lecteurs heureux qui découvrent de nouveaux mondes grâce aux livres.</target>
+      </trans-unit>
+      <trans-unit id="2590454310324017776" datatype="html">
+        <source>Explore Books</source>
+        <target>Explorer les livres</target>
+      </trans-unit>
+      <trans-unit id="2087601690221873686" datatype="html">
+        <source>Book Haven</source>
+        <target>Book Haven</target>
+      </trans-unit>
+      <trans-unit id="8414318564296519625" datatype="html">
+        <source>Home Page</source>
+        <target>Page d'accueil</target>
+      </trans-unit>
+      <trans-unit id="673463815464545437" datatype="html">
+        <source>Explore Products</source>
+        <target>Explorer les produits</target>
+      </trans-unit>
+      <trans-unit id="4182077213975274144" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ cart.length }}"/> Items</source>
+        <target><x id="INTERPOLATION" equiv-text="{{ cart.length }}"/> Articles</target>
+      </trans-unit>
+      <trans-unit id="230156590083538422" datatype="html">
+        <source>Subtotal: <x id="INTERPOLATION" equiv-text="{{ cartTotal }}"/>$</source>
+        <target>Sous-total : <x id="INTERPOLATION" equiv-text="{{ cartTotal }}"/>$</target>
+      </trans-unit>
+      <trans-unit id="1203380884137348278" datatype="html">
+        <source>View cart</source>
+        <target>Voir le panier</target>
+      </trans-unit>
+      <trans-unit id="4915431133669985304" datatype="html">
+        <source>Profile</source>
+        <target>Profil</target>
+      </trans-unit>
+      <trans-unit id="5280218112746407598" datatype="html">
+        <source>New</source>
+        <target>Nouveau</target>
+      </trans-unit>
+      <trans-unit id="5974769257146649470" datatype="html">
+        <source>My Commandes</source>
+        <target>Mes commandes</target>
+      </trans-unit>
+      <trans-unit id="3797778920049399855" datatype="html">
+        <source>Logout</source>
+        <target>Se déconnecter</target>
+      </trans-unit>
+      <trans-unit id="1267967133679326155" datatype="html">
+        <source>Create Account</source>
+        <target>Créer un compte</target>
+      </trans-unit>
+      <trans-unit id="840692109692540367" datatype="html">
+        <source>Sign In</source>
+        <target>Se connecter</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

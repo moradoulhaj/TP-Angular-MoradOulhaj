@@ -25,7 +25,7 @@ LOCALES.forEach((locale) => {
 
 // Redirect root to default locale
 app.get('/', (req, res) => {
-  res.redirect('/en-US'); // or '/fr-CA' if you want French default
+  res.redirect('/fr-CA'); // or '/fr-CA' if you want French default
 });
 
 app.listen(PORT, () => {

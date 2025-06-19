@@ -1,89 +1,279 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="fr-CA" datatype="plaintext" original="ng2.template">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
     <body>
-      <trans-unit id="9058396900121068158" datatype="html">
-        <source>Filtrer par catégorie:</source>
+      <trans-unit id="7536656933632098637" datatype="html">
+        <source> Welcome to Book Haven </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/catalog/catalog.component.html</context>
-          <context context-type="linenumber">5,6</context>
+          <context context-type="sourcefile">src/app/Pages/landing-page/landing-page.component.html</context>
+          <context context-type="linenumber">17</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="4742930719048202436" datatype="html">
-        <source>Toutes les catégories</source>
+      <trans-unit id="8336731658310332880" datatype="html">
+        <source> Your premier destination for digital and physical books. We bridge the gap between readers and authors worldwide. </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/catalog/catalog.component.html</context>
-          <context context-type="linenumber">7,8</context>
+          <context context-type="sourcefile">src/app/Pages/landing-page/landing-page.component.html</context>
+          <context context-type="linenumber">20,21</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="3530425179656642568" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Catégorie:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> <x id="INTERPOLATION" equiv-text="{{ product.productCategory }}"/></source>
+      <trans-unit id="1629250728691974117" datatype="html">
+        <source> Why Readers Choose Us </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/catalog/catalog.component.html</context>
-          <context context-type="linenumber">22,23</context>
+          <context context-type="sourcefile">src/app/Pages/landing-page/landing-page.component.html</context>
+          <context context-type="linenumber">31,32</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="3645054168311823838" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Part Type:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> <x id="INTERPOLATION" equiv-text="{{ product.productTitle }}"/></source>
+      <trans-unit id="7012160989901002577" datatype="html">
+        <source>50,000+</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/catalog/catalog.component.html</context>
-          <context context-type="linenumber">23,24</context>
+          <context context-type="sourcefile">src/app/Pages/landing-page/landing-page.component.html</context>
+          <context context-type="linenumber">38,39</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="995591611832740139" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>ID:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> <x id="INTERPOLATION" equiv-text="{{ product.productID }}"/></source>
+      <trans-unit id="3941845638029011953" datatype="html">
+        <source>Books in Collection</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/product-details/product-details.component.html</context>
-          <context context-type="linenumber">5,6</context>
+          <context context-type="sourcefile">src/app/Pages/landing-page/landing-page.component.html</context>
+          <context context-type="linenumber">39,40</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="644364115951275881" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong &gt;"/>Prix:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> <x id="INTERPOLATION" equiv-text="{{ product.productPrice }}"/></source>
+      <trans-unit id="1452879700337138949" datatype="html">
+        <source> Curated selection across all genres </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/product-details/product-details.component.html</context>
-          <context context-type="linenumber">6,7</context>
+          <context context-type="sourcefile">src/app/Pages/landing-page/landing-page.component.html</context>
+          <context context-type="linenumber">41</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="3882607488353274562" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Quantité:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> <x id="INTERPOLATION" equiv-text="{{ product.productQuantity }}"/></source>
+      <trans-unit id="6469965877314768202" datatype="html">
+        <source>1.2M+</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/product-details/product-details.component.html</context>
-          <context context-type="linenumber">7,8</context>
+          <context context-type="sourcefile">src/app/Pages/landing-page/landing-page.component.html</context>
+          <context context-type="linenumber">49,50</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="3000503124039226277" datatype="html">
-        <source>Acheter</source>
+      <trans-unit id="7125075520911283522" datatype="html">
+        <source>Active Members</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/product-details/product-details.component.html</context>
-          <context context-type="linenumber">8,9</context>
+          <context context-type="sourcefile">src/app/Pages/landing-page/landing-page.component.html</context>
+          <context context-type="linenumber">50,51</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="6103118278620987967" datatype="html">
-        <source>Connexion</source>
+      <trans-unit id="9080795476862831850" datatype="html">
+        <source>Join our growing community</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/signin/signin.component.html</context>
-          <context context-type="linenumber">2,3</context>
+          <context context-type="sourcefile">src/app/Pages/landing-page/landing-page.component.html</context>
+          <context context-type="linenumber">51,52</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="4768749765465246664" datatype="html">
-        <source>Email</source>
+      <trans-unit id="4647420985559149133" datatype="html">
+        <source>24h</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/signin/signin.component.html</context>
-          <context context-type="linenumber">4,5</context>
+          <context context-type="sourcefile">src/app/Pages/landing-page/landing-page.component.html</context>
+          <context context-type="linenumber">59</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="5249891717669571568" datatype="html">
-        <source>Mot de passe</source>
+      <trans-unit id="4068964313735561914" datatype="html">
+        <source>Delivery Promise</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/signin/signin.component.html</context>
-          <context context-type="linenumber">7,8</context>
+          <context context-type="sourcefile">src/app/Pages/landing-page/landing-page.component.html</context>
+          <context context-type="linenumber">59,60</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="7919452934138804929" datatype="html">
-        <source>Se connecter</source>
+      <trans-unit id="7865984944987892336" datatype="html">
+        <source>For most metropolitan areas</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/signin/signin.component.html</context>
-          <context context-type="linenumber">12,13</context>
+          <context context-type="sourcefile">src/app/Pages/landing-page/landing-page.component.html</context>
+          <context context-type="linenumber">60,61</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7469753398818290612" datatype="html">
+        <source>Our Story</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/Pages/landing-page/landing-page.component.html</context>
+          <context context-type="linenumber">78,79</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="448775099454222480" datatype="html">
+        <source> Founded in 2010, Book Haven began as a small independent bookstore with a passion for connecting readers with great literature. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/Pages/landing-page/landing-page.component.html</context>
+          <context context-type="linenumber">80,81</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1031395762503291764" datatype="html">
+        <source> Today, we&apos;ve grown into a comprehensive platform serving readers worldwide, while maintaining our commitment to personalized service and quality curation. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/Pages/landing-page/landing-page.component.html</context>
+          <context context-type="linenumber">84,86</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1411783196917084076" datatype="html">
+        <source> Our mission is to make reading accessible, enjoyable, and rewarding for everyone. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/Pages/landing-page/landing-page.component.html</context>
+          <context context-type="linenumber">89,90</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1553104154954622827" datatype="html">
+        <source>What We Offer</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/Pages/landing-page/landing-page.component.html</context>
+          <context context-type="linenumber">100,101</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2093762805500369338" datatype="html">
+        <source>Curated Collections</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/Pages/landing-page/landing-page.component.html</context>
+          <context context-type="linenumber">108,109</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8410391023553510553" datatype="html">
+        <source> Expertly selected books tailored to your interests and reading level. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/Pages/landing-page/landing-page.component.html</context>
+          <context context-type="linenumber">110,111</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3205115158560621621" datatype="html">
+        <source>Reading Clubs</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/Pages/landing-page/landing-page.component.html</context>
+          <context context-type="linenumber">121,122</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6743079852942072173" datatype="html">
+        <source> Join our vibrant community of readers for discussions and events. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/Pages/landing-page/landing-page.component.html</context>
+          <context context-type="linenumber">123</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="175799849397386117" datatype="html">
+        <source>Membership Benefits</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/Pages/landing-page/landing-page.component.html</context>
+          <context context-type="linenumber">133,134</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7480767574101881848" datatype="html">
+        <source> Exclusive discounts, early access, and personalized recommendations. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/Pages/landing-page/landing-page.component.html</context>
+          <context context-type="linenumber">135</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6295473926901297831" datatype="html">
+        <source> Ready to Begin Your Reading Journey? </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/Pages/landing-page/landing-page.component.html</context>
+          <context context-type="linenumber">146,147</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8527590698165940539" datatype="html">
+        <source> Join thousands of happy readers discovering new worlds through books. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/Pages/landing-page/landing-page.component.html</context>
+          <context context-type="linenumber">149,150</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2590454310324017776" datatype="html">
+        <source>Explore Books</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/Pages/landing-page/landing-page.component.html</context>
+          <context context-type="linenumber">155,156</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2087601690221873686" datatype="html">
+        <source>Book Haven</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/header/header.component.html</context>
+          <context context-type="linenumber">3,4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8414318564296519625" datatype="html">
+        <source>Home Page</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/header/header.component.html</context>
+          <context context-type="linenumber">7,9</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/header/header.component.html</context>
+          <context context-type="linenumber">63,64</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="673463815464545437" datatype="html">
+        <source>Explore Products</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/header/header.component.html</context>
+          <context context-type="linenumber">9,11</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/header/header.component.html</context>
+          <context context-type="linenumber">64,65</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4182077213975274144" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ cart.length }}"/> Items</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/header/header.component.html</context>
+          <context context-type="linenumber">26,27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="230156590083538422" datatype="html">
+        <source>Subtotal: <x id="INTERPOLATION" equiv-text="{{ cartTotal }}"/>$</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/header/header.component.html</context>
+          <context context-type="linenumber">27,28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1203380884137348278" datatype="html">
+        <source>View cart</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/header/header.component.html</context>
+          <context context-type="linenumber">29,30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4915431133669985304" datatype="html">
+        <source>Profile</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/header/header.component.html</context>
+          <context context-type="linenumber">51,52</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5280218112746407598" datatype="html">
+        <source>New</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/header/header.component.html</context>
+          <context context-type="linenumber">52,53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5974769257146649470" datatype="html">
+        <source>My Commandes</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/header/header.component.html</context>
+          <context context-type="linenumber">55,56</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3797778920049399855" datatype="html">
+        <source>Logout</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/header/header.component.html</context>
+          <context context-type="linenumber">56,57</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1267967133679326155" datatype="html">
+        <source>Create Account</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/header/header.component.html</context>
+          <context context-type="linenumber">65,66</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="840692109692540367" datatype="html">
+        <source>Sign In</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/header/header.component.html</context>
+          <context context-type="linenumber">66,67</context>
         </context-group>
       </trans-unit>
     </body>
