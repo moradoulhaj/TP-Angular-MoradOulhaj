@@ -56,38 +56,40 @@ Ouvrir votre navigateur à l’une des adresses localisées :
 ```
 
 
-## Screenshots
+## 🖼️ Screenshots
 
-### Catalog View
-![Catalog Screenshot](./screenshots/image.png)
+### 🔐 Page de Connexion (Login)  
+![Page de Connexion](./screenshots/signin.png)
 
-### Product Details
-![Product Details Screenshot](./screenshots/image2.png)
-### Catalog View v2
-![Catalog Screenshot](./screenshots/image3.png)
+### 📝 Page d'inscription (SignUp)  
+![Page d'inscription](./screenshots/signup.png)
 
-### Filter based on products category
-![Catalog Screenshot](./screenshots/image4.png)
+### 🏠 Page d’Accueil Utilisateur  
+![Accueil utilisateur](./screenshots/home-user.png)
 
-### Login Page (French version - fr-CA)
-![Login Page French](./screenshots/image5.png)
+### 🌍 Section À propos (English)  
+![About Us EN](./screenshots/aboutus.png)
 
-### Login Page (English version - en-US)
-![Login Page English](./screenshots/image6.png)
+### 🇫🇷 Section À propos (Français)  
+![About Us FR](./screenshots/aboutusfr.png)
+
+### 🔍 Section Découvrir  
+![Discover](./screenshots/discover.png)
+
+### ⭐ Section Meilleures Offres  
+![Best Deals](./screenshots/bestdeals.png)
+
+### 🔎 Détail Produit (Modal)  
+![Product Details Modal](./screenshots/product-details.png)
+
+### 🛒 Panier d’Achat  
+![Shopping Cart](./screenshots/cart.png)
+
+### ⚙️ Interface Admin – Tableau de Bord  
+![Admin Dashboard](./screenshots/admin-dashboard.png)
+
+### 📦 Admin – Gestion des Produits  
+![Admin Product List](./screenshots/admin-products.png)
 
 
 
-
-## Dependencies
-
-Before you run the application, make sure you have the following dependencies installed:
-
-### Frontend (Angular)
-
-1. **Node.js**: Ensure that Node.js is installed. You can download it from [nodejs.org](https://nodejs.org/).
-
-2. **Angular CLI**: The Angular Command Line Interface (CLI) is needed to manage the project.
-   
-   Install Angular CLI globally using npm:
-   ```bash
-   npm install -g @angular/cli
