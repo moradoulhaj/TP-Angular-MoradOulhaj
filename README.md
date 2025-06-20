@@ -28,24 +28,28 @@ node index.js
 
 ## 🔧 FrontEnd – Angular
 
-1. Cloner le dépôt GitHub :
+# 1. Cloner le dépôt GitHub :
 
 ```bash
 git clone https://github.com/moradoulhaj/TP-Angular-MoradOulhaj
 cd TP-Angular-MoradOulhaj
-2. Installer les dépendances Node.js :
+```
+# 2. Installer les dépendances Node.js :
+```bash
 npm install
-3. Construire l’application en mode production avec localisation :
+```
+# 3. Construire l’application en mode production avec localisation :
 Cette commande génère les fichiers optimisés pour les deux langues configurées (fr-CA et en-US) :
-
+```bash
 ng build --configuration production --localize
-4. Lancer le serveur de production :
+```
+# 4. Lancer le serveur de production :
 Le frontend compilé se trouve dans le dossier dist/.
 Un serveur Node.js (server.js) est utilisé pour le servir :
-
+```bash
 node server.js
 ```
-5. Accéder à l’application :
+# 5. Accéder à l’application :
 Ouvrir votre navigateur à l’une des adresses localisées :
 
 🇨🇦 Version française : http://localhost:8085/fr-CA
