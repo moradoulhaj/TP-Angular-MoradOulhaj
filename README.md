@@ -53,7 +53,7 @@ Ouvrir votre navigateur à l’une des adresses localisées :
 
 🇺🇸 Version anglaise : http://localhost:8085/en-US
 
-
+```
 
 
 ## Screenshots
