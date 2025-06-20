@@ -1,17 +1,32 @@
-# Product Catalog Application
+# 📚 BOOK Haven – Application E-Commerce Angular + Node.js
 
-Developed by **MORAD OULHAJ**
+BOOK Haven est une application e-commerce multilingue (français canadien et anglais américain) développée avec Angular pour le frontend et Node.js pour le backend.  
+Elle permet aux utilisateurs de découvrir, consulter et acheter des livres, avec également une interface d'administration simple.
 
-This is a simple product catalog application built using **Angular** for the frontend.
-## Table of Contents
-- [Dependencies](#dependencies)
-- [Setup & Running](#setup--running)
-  - [1. Clone the Repository](#1-clone-the-repository)
-  - [2. Install Frontend Dependencies](#2-install-frontend-dependencies)
-  - [3. Serve the Application](#3-serve-the-application)
-  - [4. Build the Application (Optional)](#4-build-the-application-optional)
-- [Screenshots](#screenshots)
+---
 
+## 🔧 Backend – Serveur Node.js
+
+Le backend de l'application est basé sur le dépôt suivant :  
+👉 [`sangnguyen190997/shopping-ecommerce`](https://github.com/sangnguyen190997/shopping-ecommerce/tree/master/backend)
+
+### ✅ Étapes essentielles :
+
+```bash
+# 1. Cloner le dépôt
+git clone https://github.com/sangnguyen190997/shopping-ecommerce.git
+cd shopping-ecommerce/backend
+
+# 2. Installer les dépendances
+npm install
+
+# 3. Lancer le serveur
+node index.js
+
+
+ℹ️ Les autres étapes détaillées de configuration sont disponibles dans le README original du backend et dans le rapport fourni avec ce projet.
+
+## 🔧 FrontEnd – Angular
 ## Screenshots
 
 ### Catalog View
