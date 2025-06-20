@@ -22,11 +22,39 @@ npm install
 
 # 3. Lancer le serveur
 node index.js
-
+```
 
 ℹ️ Les autres étapes détaillées de configuration sont disponibles dans le README original du backend et dans le rapport fourni avec ce projet.
 
 ## 🔧 FrontEnd – Angular
+
+1. Cloner le dépôt GitHub :
+
+```bash
+git clone https://github.com/moradoulhaj/TP-Angular-MoradOulhaj
+cd TP-Angular-MoradOulhaj
+2. Installer les dépendances Node.js :
+npm install
+3. Construire l’application en mode production avec localisation :
+Cette commande génère les fichiers optimisés pour les deux langues configurées (fr-CA et en-US) :
+
+ng build --configuration production --localize
+4. Lancer le serveur de production :
+Le frontend compilé se trouve dans le dossier dist/.
+Un serveur Node.js (server.js) est utilisé pour le servir :
+
+node server.js
+```
+5. Accéder à l’application :
+Ouvrir votre navigateur à l’une des adresses localisées :
+
+🇨🇦 Version française : http://localhost:8085/fr-CA
+
+🇺🇸 Version anglaise : http://localhost:8085/en-US
+
+
+
+
 ## Screenshots
 
 ### Catalog View
