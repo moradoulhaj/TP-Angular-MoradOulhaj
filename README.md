@@ -5,6 +5,40 @@ Elle permet aux utilisateurs de découvrir, consulter et acheter des livres, ave
 
 ---
 
+## ✨ Fonctionnalités Clés
+
+**BOOK Haven** offre une expérience e-commerce complète, aussi bien pour les utilisateurs que pour les administrateurs :
+
+### 👤 Gestion Utilisateur
+- 🔐 **Connexion (Sign In)** avec vérification JWT
+- 📝 **Inscription (Sign Up)** avec formulaire sécurisé
+- 👋 **Déconnexion (Logout)** avec suppression du token
+- 🧑 **Interface personnalisée** selon le rôle (admin / utilisateur)
+- 🌐 **Support multilingue** (fr-CA / en-US)
+
+### 📚 Catalogue de Produits
+- 🔍 **Découverte de livres** par catégories
+- 📖 **Vue détaillée d’un produit** (image, prix, description)
+- 🛒 **Ajout au panier** et gestion de la quantité
+- ❤️ **Nouveautés** et **Meilleures Offres**
+
+### 🛒 Panier et Commande
+- 📦 **Gestion complète du panier**
+- ✏️ **Mise à jour des quantités**
+- ❌ **Suppression d’articles**
+- ✅ **Passage à la commande (checkout)** avec adresse
+- 📜 **Historique des commandes enregistrées**
+
+### ⚙️ Interface Admin
+- 📋 **Liste des utilisateurs** (CRUD)
+- 🛍️ **Gestion des produits** :
+  - ➕ **Créer un produit**
+  - ✏️ **Modifier un produit**
+  - 🗑️ **Supprimer un produit**
+- 📊 **Statistiques du tableau de bord**
+- 🔐 **Interface sécurisée (admin uniquement)**
+
+
 ## 🔧 Backend – Serveur Node.js
 
 Le backend de l'application est basé sur le dépôt suivant :  
